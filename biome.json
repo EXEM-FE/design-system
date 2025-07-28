@@ -33,7 +33,7 @@
     }
   },
   "files": {
-    "includes": [
+    "include": [
       "packages/**/*.ts",
       "packages/**/*.tsx",
       "packages/**/*.js",
