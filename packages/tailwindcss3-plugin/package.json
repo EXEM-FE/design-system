@@ -22,7 +22,8 @@
     "css"
   ],
   "dependencies": {
-    "@exem/stylesheet": "workspace:*"
+    "@exem/stylesheet": "workspace:*",
+    "@exem/design-token": "workspace:*"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",

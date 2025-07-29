@@ -138,6 +138,9 @@ importers:
 
   packages/tailwindcss3-plugin:
     dependencies:
+      '@exem/design-token':
+        specifier: workspace:*
+        version: link:../design-token
       '@exem/stylesheet':
         specifier: workspace:*
         version: link:../stylesheet

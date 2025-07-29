@@ -1,18 +1,18 @@
 # @exem/tailwindcss3-plugin
 
-EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 플러그인입니다.
+EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 고급 플러그인입니다.
 
 ## 개요
 
-`@exem/stylesheet`의 CSS 변수들을 Tailwind CSS 유틸리티 클래스로 변환해주는 플러그인입니다. EXEM 디자인 토큰을 Tailwind 프로젝트에서 쉽게 활용할 수 있습니다.
+`@exem/design-token`의 토큰들을 기반으로 Tailwind CSS 유틸리티 클래스와 컴포넌트를 자동 생성하는 플러그인입니다. EXEM 디자인 시스템을 Tailwind 프로젝트에서 완전히 활용할 수 있습니다.
 
 ## 주요 기능
 
-- **색상 유틸리티**: 텍스트, 배경, 보더 색상 클래스 제공
-- **반경 유틸리티**: EXEM 디자인 시스템의 border-radius 값 사용
-- **그림자 유틸리티**: elevation에 따른 box-shadow 효과
-- **브레이크포인트**: EXEM 반응형 브레이크포인트 통합
-- **CSS 변수 자동 로드**: stylesheet 패키지 자동 import
+- **디자인 토큰 통합**: `tokens.color`, `tokens.radius`, `tokens.shadow`, `tokens.breakpoint`를 Tailwind 테마에 완전 통합
+- **동적 그라데이션**: `matchUtilities`를 활용한 방향 지정 가능한 EXEM 로고 그라데이션
+- **타이포그래피 스케일**: fontSize에 header-1 ~ caption까지의 디자인 시스템 스케일 제공
+- **폰트 웨이트**: regular, medium, semibold, bold의 일관된 폰트 두께
+- **CSS 변수 자동 로드**: @exem/stylesheet 자동 import
 
 ## 설치
 
@@ -53,19 +53,18 @@ module.exports = {
 <button class="bg-exem-surface-accent text-exem-inverse">액센트 버튼</button>
 <div class="bg-exem-elevation-1">카드 배경</div>
 
-<!-- 보더 -->
+<!-- 테두리 -->
 <input class="border border-exem-primary focus:border-exem-focused" />
 <div class="border-2 border-exem-accent">강조 테두리</div>
 
-<!-- 반경 -->
-<div class="rounded-exem-medium">중간 둥근 모서리</div>
-<button class="rounded-exem-strong">강한 둥근 모서리</button>
-<div class="rounded-exem-circle">원형</div>
+<!-- 타이포그래피 컴포넌트 -->
+<h1 class="text-header-1">헤더 1</h1>
+<h2 class="text-header-2">헤더 2</h2>
+<p class="text-body-1">본문 텍스트</p>
+<span class="text-caption">캡션 텍스트</span>
 
-<!-- 그림자 -->
-<div class="shadow-exem-weak">약한 그림자</div>
-<div class="shadow-exem-medium">중간 그림자</div>
-<div class="shadow-exem-strong">강한 그림자</div>
+<!-- 동적 그라데이션 -->
+<div class="bg-gradient-exem-logo-[45deg]">오른쪽 그라데이션</div>
 
 <!-- 반응형 브레이크포인트 -->
 <div class="text-sm exem-md:text-lg exem-lg:text-xl">반응형 텍스트</div>
@@ -93,7 +92,7 @@ module.exports = {
 - `bg-exem-surface-critical` - 위험 표면
 - `bg-exem-elevation-0~3` - 높이별 배경
 
-### 보더 색상
+### 테두리 색상
 - `border-exem-primary` - 기본 테두리
 - `border-exem-secondary` - 보조 테두리
 - `border-exem-hovered` - 호버 테두리
@@ -102,6 +101,20 @@ module.exports = {
 - `border-exem-success` - 성공 테두리
 - `border-exem-warning` - 경고 테두리
 - `border-exem-critical` - 위험 테두리
+
+### 타이포그래피 컴포넌트
+- `text-header-1` - 헤더 1 (28px, 140%, 700)
+- `text-header-2` - 헤더 2 (24px, 140%, 700)
+- `text-title-1` - 타이틀 1 (20px, 140%, 600)
+- `text-title-2` - 타이틀 2 (18px, 140%, 600)
+- `text-body-1` - 본문 1 (16px, 140%, 400)
+- `text-body-2` - 본문 2 (14px, 140%, 400)
+- `text-body-3` - 본문 3 (12px, 140%, 400)
+- `text-caption` - 캡션 (11px, 140%, 400)
+
+### 동적 그라데이션
+- `bg-gradient-exem-logo-[방향]` - EXEM 로고 그라데이션
+
 
 ### 반경
 - `rounded-exem-weak` - 약한 반경 (4px)
@@ -126,16 +139,8 @@ module.exports = {
 
 ```html
 <!-- 배경 색상을 bg-* 형태로 사용 -->
-<div class="bg-exem-text-primary">기본 텍스트 색상을 배경으로</div>
-<div class="text-exem-surface-accent">강조 표면 색상을 텍스트로</div>
-
-<!-- 커스텀 CSS에서 사용 -->
-<style>
-.custom-button {
-  @apply bg-exem-surface-accent text-exem-inverse rounded-exem-medium shadow-exem-weak;
-}
-</style>
-```
+<div class="bg-text-primary">기본 텍스트 색상을 배경으로</div>
+<div class="text-surface-accent">강조 표면 색상을 텍스트로</div>
 
 ## CSS-in-JS와 함께 사용
 
@@ -163,10 +168,19 @@ pnpm build
 pnpm typecheck
 ```
 
+## 플러그인 아키텍처
+
+이 플러그인은 다음과 같은 고급 Tailwind 기능을 활용합니다:
+
+- **`addUtilities`**: 기본 유틸리티 클래스 생성
+- **`matchUtilities`**: 동적 값을 받는 유틸리티 (그라데이션 방향 등)
+- **Theme 확장**: 기존 Tailwind 테마에 EXEM 토큰 통합
+
 ## 의존성
 
 ### Dependencies
 - `@exem/stylesheet` - CSS 변수 소스
+- `@exem/design-token` - TypeScript 토큰 정의
 
 ### PeerDependencies
 - `tailwindcss` ^3.0.0

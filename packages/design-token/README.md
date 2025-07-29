@@ -29,27 +29,31 @@ pnpm add @exem/design-token
 import '@exem/design-token'
 ```
 
-### 개별 토큰 import
+### 토큰 import 방법
 
 ```typescript
-import colorTokens from '@exem/design-token/src/tokens/colorTokens'
-import radiusTokens from '@exem/design-token/src/tokens/radiusTokens'
-import shadowTokens from '@exem/design-token/src/tokens/shadowTokens'
-import breakpointTokens from '@exem/design-token/src/tokens/breakpointTokens'
+// 방법 1: 개별 토큰 직접 import (권장)
+import { color, radius, shadow, breakpoint } from '@exem/design-token'
 
 // CSS-in-JS에서 사용
 const Button = styled.button`
-  background-color: ${colorTokens['surface-accent-default']};
-  color: ${colorTokens['text-inverse']};
-  border-radius: ${radiusTokens.medium};
-  box-shadow: ${shadowTokens.weak};
+  background-color: ${color['surface-accent-default']};
+  color: ${color['text-inverse']};
+  border-radius: ${radius.medium};
+  box-shadow: ${shadow.weak};
 `
 
-// 일반 CSS 속성에서 사용
+// 방법 2: tokens 객체를 통한 import
+import { tokens } from '@exem/design-token'
+
 const buttonStyle = {
-  backgroundColor: colorTokens['surface-accent-default'], // var(--color-surface-accent-default)
-  borderRadius: radiusTokens.medium, // var(--radius-medium)
+  backgroundColor: tokens.color['surface-accent-default'], // var(--color-surface-accent-default)
+  borderRadius: tokens.radius.medium, // var(--radius-medium)
+  boxShadow: tokens.shadow.weak, // var(--shadow-weak)
 }
+
+// 방법 3: 하위 호환성을 위한 직접 경로 import
+import colorTokens from '@exem/design-token/src/tokens/colorTokens'
 ```
 
 ## 토큰 구조
