@@ -14,6 +14,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.27.1
         version: 2.29.5
+      '@types/node':
+        specifier: ^24.1.0
+        version: 24.1.0
       typescript:
         specifier: ^5.3.3
         version: 5.8.3
@@ -22,6 +25,10 @@ importers:
         version: 1.6.1(@types/node@24.1.0)
 
   packages/design-token:
+    dependencies:
+      '@exem/stylesheet':
+        specifier: workspace:*
+        version: link:../stylesheet
     devDependencies:
       tsup:
         specifier: ^8.0.1
@@ -115,10 +122,6 @@ importers:
         version: 5.8.3
 
   packages/stylesheet:
-    dependencies:
-      '@exem/design-token':
-        specifier: workspace:*
-        version: link:../design-token
     devDependencies:
       postcss:
         specifier: ^8.4.32
@@ -7042,11 +7045,11 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 18.19.120
+      '@types/node': 24.1.0
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 18.19.120
+      '@types/node': 24.1.0
 
   '@types/cross-spawn@6.0.6':
     dependencies:
@@ -7070,7 +7073,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.6':
     dependencies:
-      '@types/node': 18.19.120
+      '@types/node': 24.1.0
       '@types/qs': 6.14.0
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.5
@@ -7119,7 +7122,7 @@ snapshots:
 
   '@types/node-fetch@2.6.12':
     dependencies:
-      '@types/node': 18.19.120
+      '@types/node': 24.1.0
       form-data: 4.0.4
 
   '@types/node@12.20.55': {}
@@ -7155,12 +7158,12 @@ snapshots:
   '@types/send@0.17.5':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 18.19.120
+      '@types/node': 24.1.0
 
   '@types/serve-static@1.15.8':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 18.19.120
+      '@types/node': 24.1.0
       '@types/send': 0.17.5
 
   '@types/unist@2.0.11': {}
