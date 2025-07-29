@@ -1,1 +1,1 @@
-export {}
+import "./global.css"
