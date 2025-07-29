@@ -11,14 +11,19 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate": "tsx src/generateToken.ts"
   },
   "keywords": [
     "design-token",
     "exem",
     "design-system"
   ],
+  "dependencies": {
+    "@exem/stylesheet": "workspace:*"
+  },
   "devDependencies": {
+    "tsx": "^4.0.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   }
