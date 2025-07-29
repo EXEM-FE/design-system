@@ -1,0 +1,35 @@
+{
+  "name": "@exem/tailwindcss3-plugin",
+  "version": "0.1.0",
+  "description": "EXEM Design System - Tailwind CSS 3 Plugin",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwindcss3",
+    "plugin",
+    "design-system",
+    "exem",
+    "css"
+  ],
+  "dependencies": {
+    "@exem/stylesheet": "workspace:*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  }
+}
