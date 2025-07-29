@@ -1,6 +1,6 @@
 {
   "name": "@exem/design-token",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "EXEM Design System - Design Tokens",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
