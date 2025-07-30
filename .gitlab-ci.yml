@@ -1,0 +1,57 @@
+# EXEM Design System CI/CD Pipeline
+
+stages:
+  - test
+
+# 린트 검사
+lint:
+  image: node:lts
+  stage: test
+  before_script:
+    - npm install -g pnpm@8
+    - pnpm install --no-frozen-lockfile
+  script:
+    - echo "🔍 바이옴 린트 검사 시작..."
+    - echo "📋 활성화된 검사 항목:"
+    - echo "  ✓ recommended 규칙 (모든 권장 lint 규칙)"
+    - echo "  ✓ style 검사 (noNonNullAssertion 제외)" 
+    - echo "  ✓ correctness 검사 (useExhaustiveDependencies: warn)"
+    - echo "  ✓ complexity 검사 (noForEach, useOptionalChain 등)"
+    - echo "  ✓ suspicious 검사 (noImplicitAnyLet, noAssignInExpressions 등)"
+    - echo "  ✓ 포맷터 검사 (2 spaces, 80자 제한, LF)"
+    - echo "  📁 대상: packages/**/*.{ts,tsx,js,jsx}"
+    - echo "  🚫 제외: packages/*/dist/**, node_modules/**"
+    - echo ""
+    - pnpm lint
+    - echo "✅ 바이옴 린트 검사 완료"
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - node_modules/
+  only:
+    - branches
+    - merge_requests
+
+# 타입 검사
+typecheck:
+  image: node:lts
+  stage: test
+  before_script:
+    - npm install -g pnpm@8
+    - pnpm install --no-frozen-lockfile
+  script:
+    - echo "🔍 타입 검사 시작..."
+    - cd packages/design-token && pnpm build && cd ../..
+    - pnpm typecheck
+    - echo "✅ 타입 검사 완료"
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - node_modules/
+  only:
+    - branches
+    - merge_requests

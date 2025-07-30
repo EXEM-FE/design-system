@@ -28,7 +28,7 @@ export default plugin(
     } as const
 
     // 동적 그라데이션 유틸리티 생성
-    Object.entries(gradients).forEach(([name, colorStops]) => {
+    for (const [name, colorStops] of Object.entries(gradients)) {
       matchUtilities(
         {
           [`bg-gradient-${name}`]: direction => ({
@@ -48,7 +48,7 @@ export default plugin(
           },
         }
       )
-    })
+    }
   },
   {
     theme: {

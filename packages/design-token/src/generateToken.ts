@@ -41,8 +41,8 @@ function extractAndGroupCssVariables(
   const regex = /--([a-zA-Z0-9-]+):\s*([^;]+);/g
   const grouped: Record<string, Record<string, string>> = {}
 
-  let match
-  while ((match = regex.exec(content)) !== null) {
+  let match: RegExpExecArray | null = regex.exec(content)
+  while (match !== null) {
     const name = match[1]
     const value = match[2].trim()
 
@@ -61,6 +61,8 @@ function extractAndGroupCssVariables(
       grouped[prefix] = {}
     }
     grouped[prefix][name] = value
+
+    match = regex.exec(content)
   }
 
   return grouped
@@ -78,7 +80,7 @@ function generateTokens(
 ): FlatTokens {
   const tokens: FlatTokens = {}
 
-  Object.entries(variables).forEach(([key]) => {
+  for (const [key] of Object.entries(variables)) {
     // 접두사를 제거한 키 생성
     let tokenKey = key
 
@@ -100,7 +102,7 @@ function generateTokens(
 
     // 평면화된 구조로 직접 매핑
     tokens[tokenKey] = `var(--${key})`
-  })
+  }
 
   return tokens
 }
@@ -126,11 +128,11 @@ function processGlobalCssFile() {
   const generatedFiles: string[] = []
 
   // prefixDescriptions에 정의된 접두사에 대해서만 토큰 파일 생성
-  Object.entries(groupedVariables).forEach(([prefix, variables]) => {
+  for (const [prefix, variables] of Object.entries(groupedVariables)) {
     // prefixDescriptions에 정의되지 않은 접두사는 건너뜁니다.
     if (!prefixDescriptions[prefix]) {
       console.log(`⏭️  ${prefix} 토큰 생성을 건너뜁니다.`)
-      return
+      continue
     }
 
     const tokens = generateTokens(variables, prefix)
@@ -158,7 +160,7 @@ export default ${tokenName};
     console.log(
       `✅ Generated: ${tokenName}.ts (${Object.keys(variables).length} tokens)`
     )
-  })
+  }
 
   return generatedFiles
 }
