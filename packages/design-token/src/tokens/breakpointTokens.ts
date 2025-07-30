@@ -5,9 +5,9 @@
 // Description: sm:* 등 반응형 브레이크포인트 변형
 
 const breakpointTokens = {
-  md: "var(--breakpoint-md)",
-  lg: "var(--breakpoint-lg)",
-  xl: "var(--breakpoint-xl)",
-} as const
+	md: "var(--breakpoint-md)",
+	lg: "var(--breakpoint-lg)",
+	xl: "var(--breakpoint-xl)",
+} as const;
 
-export default breakpointTokens
+export default breakpointTokens;

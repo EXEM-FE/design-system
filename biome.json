@@ -1,5 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
   "linter": {
     "enabled": true,
     "rules": {
@@ -33,12 +34,16 @@
     }
   },
   "files": {
-    "include": [
-      "packages/**/*.ts",
-      "packages/**/*.tsx",
-      "packages/**/*.js",
-      "packages/**/*.jsx"
+    "includes": [
+      "**/packages/**/*.ts",
+      "**/packages/**/*.tsx",
+      "**/packages/**/*.js",
+      "**/packages/**/*.jsx"
     ],
-    "ignore": ["packages/*/dist/**", "packages/*/node_modules/**"]
+    "ignore": [
+      "**/dist/**",
+      "**/node_modules/**",
+      "**/.changeset/**"
+    ]
   }
 }
