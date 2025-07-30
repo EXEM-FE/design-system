@@ -14,38 +14,39 @@ EXEM 디자인 시스템의 모든 CSS 변수(color, radius, shadow, breakpoint)
 - **크기 토큰**: 반경, 그림자 효과, 브레이크포인트
 - **즉시 사용 가능**: CSS 변수로 바로 활용 가능
 
-## 설치
+## 현재 상태
 
-```bash
-pnpm add exem-stylesheet
-```
+- ✅ **구현됨**: CSS 변수 정의 완료
+- ❌ **NPM 미배포**: 로컬 워크스페이스에서만 사용 가능
+- ✅ **워크스페이스 사용 가능**: 모노레포 내에서 개발 가능
 
-## 사용법
+## 로컬 개발 사용법
 
-### TypeScript/JavaScript에서 임포트
+### 워크스페이스에서 import
 
 ```typescript
-// 전역 CSS 변수 로드
+// 모노레포 워크스페이스에서만 가능
 import 'exem-stylesheet'
 
-// 또는 직접 CSS 파일 임포트
+// 또는 직접 경로로 CSS 파일 임포트
 import 'exem-stylesheet/src/global.css'
 ```
 
-### CSS에서 임포트
+### CSS에서 워크스페이스 import
 
 ```css
-/* CSS 파일에서 임포트 */
+/* 워크스페이스 내에서만 가능 */
 @import 'exem-stylesheet/src/global.css';
 ```
 
-### HTML에서 사용
+### 빌드된 CSS 파일 직접 사용
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="node_modules/exem-stylesheet/dist/index.css">
+  <!-- 워크스페이스 빌드 결과물 사용 -->
+  <link rel="stylesheet" href="./packages/stylesheet/dist/index.css">
 </head>
 <body>
   <div style="color: var(--color-text-primary); background: var(--color-elevation-elevation-0);">

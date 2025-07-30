@@ -2,7 +2,9 @@
 
 # EXEM Design System
 
-EXEM 제품군을 위한 통합 디자인 시스템
+> 🚧 **실험적 개발 단계**: 현재 모노레포 구조 및 디자인 토큰 시스템을 실험 중입니다.
+
+EXEM 제품군을 위한 통합 디자인 시스템 (개발 중)
 
 ## 기술 스택
 
@@ -14,15 +16,15 @@ EXEM 제품군을 위한 통합 디자인 시스템
 - **테스트**: Vitest
 - **린팅/포맷팅**: Biome 
 
-## 패키지
+## 패키지 개발 상태
 
-| 패키지 | 설명 | 버전 |
-|--------|------|------|
-| [exem-stylesheet](./packages/stylesheet) | 전역 CSS 변수 및 스타일 | 0.2.0 |
-| [exem-design-token](./packages/design-token) | CSS 변수 기반 TypeScript 디자인 토큰 | 0.2.0 |
-| [exem-tailwindcss-plugin](./packages/tailwindcss3-plugin) | Tailwind CSS 3 통합 플러그인 | 0.1.0 |
-| [exem-icon](./packages/icon) | SVG 아이콘 컴포넌트 (미구현) | 0.1.0 |
-| [exem-react](./packages/react) | React UI 컴포넌트 | 0.1.0 |
+| 패키지 | 설명 | 상태 | 로컬 개발 |
+|--------|------|------|----------|
+| [exem-stylesheet](./packages/stylesheet) | 전역 CSS 변수 및 스타일 | ✅ **구현됨** | 사용 가능 |
+| [exem-design-token](./packages/design-token) | CSS 변수 기반 TypeScript 디자인 토큰 | ✅ **구현됨** | 사용 가능 |
+| [exem-tailwindcss-plugin](./packages/tailwindcss3-plugin) | Tailwind CSS 3 통합 플러그인 | ✅ **구현됨** | 사용 가능 |
+| [exem-icon](./packages/icon) | SVG 아이콘 컴포넌트 | 🚧 **미구현** | 빈 패키지 |
+| [exem-react](./packages/react) | React UI 컴포넌트 | 🚧 **미구현** | 빈 패키지 |
 
 ## 패키지 의존성 구조
 
@@ -77,68 +79,66 @@ graph TD
 2. 모든 패키지는 궁극적으로 CSS 변수를 기반으로 동작
 3. 토큰 변경 시 자동으로 모든 패키지에 반영
 
-## 사용 사례별 워크플로우
+## 🚧 현재 사용 가능한 기능
 
-### 🎨 Tailwind CSS 사용자
+### ✅ 구현된 기능들
+
+**1. 디자인 토큰 시스템**:
 ```bash
-# 1. 플러그인 설치
-pnpm add exem-tailwindcss-plugin
+# 워크스페이스에서 개발
+pnpm dev
 
-# 2. tailwind.config.js 설정
-module.exports = {
-  plugins: [require('exem-tailwindcss-plugin')]
+# 토큰 재생성
+cd packages/design-token && pnpm generate
+```
+
+**2. CSS 변수 활용**:
+```typescript
+// 로컬 개발 시에만 사용 가능
+import { tokens } from 'exem-design-token'
+
+const style = {
+  backgroundColor: tokens.color['surface-accent-default'],
+  borderRadius: tokens.radius.medium
 }
-
-# 3. 컴포넌트에서 사용
-<div className="bg-surface-primary-default text-text-primary rounded-medium">
-  <h1 className="text-header-1">EXEM 제목</h1>
-  <div className="bg-gradient-exem-logo-[to_right]">그라데이션</div>
-</div>
 ```
 
-### ⚛️ React 컴포넌트 사용자
-```bash
-# 1. 컴포넌트 설치
-pnpm add exem-react
-
-# 2. 애플리케이션에서 사용
-import { Button, Card } from 'exem-react'
-
-<Card>
-  <Button variant="primary">EXEM 버튼</Button>
-</Card>
+**3. Tailwind 플러그인** (실험적):
+```javascript
+// tailwind.config.js (로컬 개발용)
+module.exports = {
+  plugins: [require('./packages/tailwindcss3-plugin')]
+}
 ```
 
-### 🎯 토큰만 사용하는 사용자
-```bash
-# 1. 토큰 패키지 설치
-pnpm add exem-design-token
+### 🚧 개발 예정
 
-# 2. CSS-in-JS에서 사용
-import { color, radius, shadow } from 'exem-design-token'
+- **React 컴포넌트**: Button, Input, Modal 등
+- **아이콘 시스템**: SVG 아이콘 라이브러리  
+- **NPM 배포**: 실제 패키지 설치 가능
 
-const StyledButton = styled.button`
-  background: ${color['surface-accent-default']};
-  border-radius: ${radius.medium};
-  box-shadow: ${shadow.weak};
-`
-```
-
-## 빠른 시작
+## 로컬 개발 시작
 
 ```bash
+# 저장소 클론
+git clone <repository-url>
+cd exem-design
+
 # 의존성 설치
 pnpm install
 
-# 전체 패키지 빌드
-pnpm build
-
-# 패키지 빌드 감시 모드 (개발용)
+# 개발 모드 (전체 패키지 빌드 감시)
 pnpm dev
 
-# 디자인 토큰 재생성 (필요시)
+# 디자인 토큰 재생성 (CSS 변수 수정 시)
 cd packages/design-token && pnpm generate
 ```
+
+### 💡 개발 팁
+
+- CSS 변수 수정: `packages/stylesheet/src/global.css`
+- 토큰 자동 생성: `pnpm generate`로 TypeScript 토큰 업데이트
+- 실제 사용은 워크스페이스 내에서만 가능 (NPM 미배포 상태)
 
 ## 명령어
 

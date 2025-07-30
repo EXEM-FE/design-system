@@ -98,3 +98,6 @@ temp/
 
 # Agent
 .claude/
+
+# Claude Code guidance file
+CLAUDE.md

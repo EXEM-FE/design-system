@@ -14,30 +14,39 @@ EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 
 - **폰트 웨이트**: regular, medium, semibold, bold의 일관된 폰트 두께
 - **CSS 변수 자동 로드**: exem-stylesheet 자동 import
 
-## 설치
+## 현재 상태
 
-```bash
-npm install exem-tailwindcss-plugin
-# 또는
-pnpm add exem-tailwindcss-plugin
-```
+- ✅ **구현됨**: Tailwind CSS 플러그인 완료
+- ❌ **NPM 미배포**: 로컬 워크스페이스에서만 사용 가능
+- ✅ **워크스페이스 사용 가능**: 모노레포 내에서 개발 가능
+- ✅ **동적 그라데이션**: matchUtilities 기반 고급 기능 포함
 
-## 사용법
+## 로컬 개발 사용법
 
-### Tailwind 설정
+### 워크스페이스에서 Tailwind 설정
 
-`tailwind.config.js`에 플러그인을 추가하세요:
+`tailwind.config.js`에 워크스페이스 패키지를 추가하세요:
 
 ```javascript
+// 모노레포 워크스페이스에서만 가능
 module.exports = {
   content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
   plugins: [
-    require('exem-tailwindcss-plugin'),
+    require('./packages/tailwindcss3-plugin'), // 워크스페이스 로컬 경로
   ],
 }
+```
+
+### 프로젝트에 CSS 변수 로드
+
+먼저 워크스페이스의 stylesheet를 import해야 합니다:
+
+```typescript
+// 워크스페이스에서 CSS 변수 로드 (필수)
+import 'exem-stylesheet'
 ```
 
 ### HTML/JSX에서 사용

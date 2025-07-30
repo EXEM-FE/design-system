@@ -14,21 +14,23 @@ CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-J
 - **카테고리별 분류**: color, radius, shadow, breakpoint별 토큰 파일
 - **독립적 사용**: CSS 스타일시트 없이도 토큰만 사용 가능
 
-## 설치
+## 현재 상태
 
-```bash
-npm install exem-design-token
-```
+- ✅ **구현됨**: TypeScript 토큰 생성 완료
+- ❌ **NPM 미배포**: 로컬 워크스페이스에서만 사용 가능
+- ✅ **워크스페이스 사용 가능**: 모노레포 내에서 개발 가능
+- ✅ **토큰 자동 생성**: CSS 변수에서 TypeScript 토큰 추출 기능
 
-## 사용법
+## 로컬 개발 사용법
 
-### 토큰 import 방법
+### 워크스페이스에서 토큰 import
 
 ```typescript
+// 모노레포 워크스페이스에서만 가능
 // 방법 1: 개별 토큰 직접 import (권장)
 import { color, radius, shadow, breakpoint } from 'exem-design-token'
 
-// CSS-in-JS에서 사용
+// CSS-in-JS에서 사용 (워크스페이스 내에서만)
 const Button = styled.button`
   background-color: ${color['surface-accent-default']};
   color: ${color['text-inverse']};
@@ -46,17 +48,14 @@ const buttonStyle = {
 }
 ```
 
-### CSS 스타일시트 사용 (선택적)
+### CSS 스타일시트 사용 (워크스페이스)
 
-CSS 변수를 실제로 사용하려면 별도로 stylesheet 패키지를 설치하세요:
+CSS 변수를 실제로 사용하려면 워크스페이스 내 stylesheet 패키지를 함께 사용하세요:
 
-```bash
-npm install exem-stylesheet
-```
-
-```css
-/* 또는 CSS에서 직접 import */
-@import 'exem-stylesheet/dist/index.css';
+```typescript
+// 워크스페이스에서 CSS 변수 로드
+import 'exem-stylesheet'
+import { tokens } from 'exem-design-token'
 ```
 
 ## 토큰 구조
