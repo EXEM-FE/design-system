@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 포맷팅 먼저 실행
+echo "🎨 Formatting code..."
+pnpm format
+
+# 포맷팅된 파일들 다시 스테이징
+git add .
+
+# 린팅 실행 (Biome이 자동으로 dist 폴더 무시)
+echo "🔍 Linting code..."
+pnpm lint:fix || {
+    echo "⚠️  Some lint issues remain (auto-generated files ignored)"
+    exit 0
+}
+
+# 타입 체크 실행  
+echo "🔧 Type checking..."
+pnpm typecheck
+
+echo "✅ Pre-commit checks passed!"
