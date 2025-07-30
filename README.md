@@ -1,4 +1,4 @@
-![EXEM Design System](https://github.com/user-attachments/assets/cf7e1d99-e5f0-4e5e-bb77-2f5b36a5a35c)
+![EXEM Design System](./assets/exem-design-system-banner.webp)
 
 # EXEM Design System
 
@@ -29,20 +29,20 @@ EXEM 제품군을 위한 통합 디자인 시스템
 ```mermaid
 graph TD
     %% 소스
-    CSS[📄 exem-stylesheet<br/>전역 CSS 변수]
+    CSS["📄 exem-stylesheet<br/>전역 CSS 변수"]
     
     %% 토큰 생성
-    TOKEN[📦 exem-design-token<br/>TypeScript 토큰<br/>- colorTokens<br/>- radiusTokens<br/>- shadowTokens<br/>- breakpointTokens]
+    TOKEN["📦 exem-design-token<br/>TypeScript 토큰<br/>- colorTokens<br/>- radiusTokens<br/>- shadowTokens<br/>- breakpointTokens"]
     
     %% 통합 패키지들
-    TW[🎨 exem-tailwindcss-plugin<br/>Tailwind CSS 3 통합<br/>- 테마 확장<br/>- 동적 그라데이션]
+    TW["🎨 exem-tailwindcss-plugin<br/>Tailwind CSS 3 통합<br/>- 테마 확장<br/>- 동적 그라데이션"]
     
-    REACT[⚛️ exem-react<br/>React 컴포넌트<br/>- Button, Card 등]
+    REACT["⚛️ exem-react<br/>React 컴포넌트<br/>- Button, Card 등"]
     
-    ICON[🎯 exem-icon<br/>아이콘 시스템 (미구현)]
+    ICON["🎯 exem-icon<br/>아이콘 시스템<br/>(미구현)"]
     
     %% 최종 애플리케이션
-    APP[🚀 사용자 애플리케이션<br/>Next.js / React / Tailwind]
+    APP["🚀 사용자 애플리케이션<br/>Next.js / React / Tailwind"]
     
     %% 의존성 관계
     CSS --> TOKEN
