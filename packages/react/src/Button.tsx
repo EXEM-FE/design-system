@@ -1,8 +1,8 @@
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { clsx } from "clsx"
-import { forwardRef, CSSProperties } from "react"
 import { color, radius } from "exem-design-token"
+import { type CSSProperties, forwardRef } from "react"
 import "./Button.css"
 
 const buttonVariants = cva(

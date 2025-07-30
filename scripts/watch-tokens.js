@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import chokidar from "chokidar"
 import { execSync } from "child_process"
+import chokidar from "chokidar"
 import path from "path"
 import { fileURLToPath } from "url"
 

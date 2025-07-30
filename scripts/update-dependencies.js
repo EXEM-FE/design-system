@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
+import { execSync } from "child_process"
 import fs from "fs"
 import path from "path"
 import { fileURLToPath } from "url"
-import { execSync } from "child_process"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -39,7 +39,7 @@ function updateDependencies() {
   let hasUpdates = false
 
   for (const [packageName, packageInfo] of Object.entries(workspacePackages)) {
-    let packageJson = JSON.parse(fs.readFileSync(packageInfo.path, "utf8"))
+    const packageJson = JSON.parse(fs.readFileSync(packageInfo.path, "utf8"))
     let updated = false
 
     // dependencies 확인
@@ -91,7 +91,7 @@ function revertToWorkspaceReferences() {
   console.log("🔄 workspace:* 참조로 되돌립니다...")
 
   for (const [packageName, packageInfo] of Object.entries(workspacePackages)) {
-    let packageJson = JSON.parse(fs.readFileSync(packageInfo.path, "utf8"))
+    const packageJson = JSON.parse(fs.readFileSync(packageInfo.path, "utf8"))
     let updated = false
 
     // dependencies 확인
@@ -145,7 +145,7 @@ function main() {
   }
 
   switch (command) {
-    case "update":
+    case "update": {
       const hasUpdates = updateDependencies()
       if (hasUpdates) {
         console.log("✅ 의존성 업데이트가 완료되었습니다.")
@@ -153,6 +153,7 @@ function main() {
         console.log("✅ 업데이트할 의존성이 없습니다.")
       }
       break
+    }
 
     case "revert":
       revertToWorkspaceReferences()
