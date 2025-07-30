@@ -1,4 +1,4 @@
-import { tokens } from "@exem/design-token"
+import { tokens } from "exem-design-token-test"
 import plugin from "tailwindcss/plugin"
 
 /**

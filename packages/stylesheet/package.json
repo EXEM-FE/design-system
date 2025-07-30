@@ -1,5 +1,5 @@
 {
-  "name": "@exem/stylesheet",
+  "name": "exem-stylesheet-test",
   "version": "0.2.0",
   "description": "EXEM Design System - CSS Utilities and Base Styles",
   "main": "dist/index.css",

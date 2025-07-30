@@ -1,39 +1,32 @@
-# @exem/design-token
+# exem-design-token-test
 
 EXEM 디자인 시스템의 디자인 토큰을 TypeScript에서 활용할 수 있는 패키지입니다.
 
 ## 개요
 
-`@exem/stylesheet`의 CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-JS 라이브러리나 TypeScript 프로젝트에서 type-safe하게 디자인 토큰을 사용할 수 있습니다.
+CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-JS 라이브러리나 TypeScript 프로젝트에서 type-safe하게 디자인 토큰을 사용할 수 있습니다.
 
 ## 주요 기능
 
-- **자동 토큰 생성**: `global.css`에서 TypeScript 토큰 자동 추출
-- **Type-Safe**: TypeScript로 컴파일 타임에 오타 방지
+- **자동 토큰 생성**: CSS 변수에서 TypeScript 토큰 자동 추출
+- **Type-Safe**: TypeScript로 컴파일 타임에 오타 방지  
 - **CSS 변수 래핑**: `var(--token-name)` 형태로 CSS 변수 활용
 - **카테고리별 분류**: color, radius, shadow, breakpoint별 토큰 파일
-- **전역 스타일 자동 로드**: import만으로 CSS 변수 활성화
+- **독립적 사용**: CSS 스타일시트 없이도 토큰만 사용 가능
 
 ## 설치
 
 ```bash
-pnpm add @exem/design-token
+npm install exem-design-token-test
 ```
 
 ## 사용법
-
-### 기본 import (CSS 변수 자동 로드)
-
-```typescript
-// CSS 변수가 자동으로 로드됩니다
-import '@exem/design-token'
-```
 
 ### 토큰 import 방법
 
 ```typescript
 // 방법 1: 개별 토큰 직접 import (권장)
-import { color, radius, shadow, breakpoint } from '@exem/design-token'
+import { color, radius, shadow, breakpoint } from 'exem-design-token-test'
 
 // CSS-in-JS에서 사용
 const Button = styled.button`
@@ -44,16 +37,26 @@ const Button = styled.button`
 `
 
 // 방법 2: tokens 객체를 통한 import
-import { tokens } from '@exem/design-token'
+import { tokens } from 'exem-design-token-test'
 
 const buttonStyle = {
   backgroundColor: tokens.color['surface-accent-default'], // var(--color-surface-accent-default)
   borderRadius: tokens.radius.medium, // var(--radius-medium)
   boxShadow: tokens.shadow.weak, // var(--shadow-weak)
 }
+```
 
-// 방법 3: 하위 호환성을 위한 직접 경로 import
-import colorTokens from '@exem/design-token/src/tokens/colorTokens'
+### CSS 스타일시트 사용 (선택적)
+
+CSS 변수를 실제로 사용하려면 별도로 stylesheet 패키지를 설치하세요:
+
+```bash
+npm install exem-stylesheet-test
+```
+
+```css
+/* 또는 CSS에서 직접 import */
+@import 'exem-stylesheet-test/dist/index.css';
 ```
 
 ## 토큰 구조
@@ -123,9 +126,6 @@ pnpm generate
 
 ## 의존성
 
-### Dependencies
-- `@exem/stylesheet` - CSS 변수 소스
-
 ### DevDependencies
 - `tsx` - TypeScript 실행 환경
 - `tsup` - 빌드 도구
@@ -150,9 +150,8 @@ design-token/
 
 ## 관련 패키지
 
-- `@exem/stylesheet` - CSS 변수 정의 소스
-- `@exem/react` - React 컴포넌트에서 토큰 활용
-- `@exem/react-theming` - React 테마 시스템
+- `exem-stylesheet-test` - CSS 변수 정의 소스
+- `exem-tailwindcss3-plugin-test` - Tailwind CSS 플러그인에서 토큰 활용
 
 ## 라이선스
 
