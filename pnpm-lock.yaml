@@ -25,10 +25,6 @@ importers:
         version: 1.6.1(@types/node@24.1.0)
 
   packages/design-token:
-    dependencies:
-      '@exem/stylesheet':
-        specifier: workspace:*
-        version: link:../stylesheet
     devDependencies:
       tsup:
         specifier: ^8.0.1
@@ -61,12 +57,12 @@ importers:
 
   packages/react:
     dependencies:
-      '@exem/design-token':
-        specifier: workspace:*
-        version: link:../design-token
       '@exem/icon':
         specifier: workspace:*
         version: link:../icon
+      exem-design-token-test:
+        specifier: workspace:*
+        version: link:../design-token
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.6.6
@@ -99,31 +95,6 @@ importers:
         specifier: ^5.3.3
         version: 5.8.3
 
-  packages/react-theming:
-    dependencies:
-      '@exem/design-token':
-        specifier: workspace:*
-        version: link:../design-token
-    devDependencies:
-      '@types/react':
-        specifier: ^19.0.0
-        version: 19.1.8
-      '@types/react-dom':
-        specifier: ^19.0.0
-        version: 19.1.6(@types/react@19.1.8)
-      react:
-        specifier: ^19.0.0
-        version: 19.1.0
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.1.0(react@19.1.0)
-      tsup:
-        specifier: ^8.0.1
-        version: 8.5.0(jiti@1.21.7)(postcss@8.5.6)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
-      typescript:
-        specifier: ^5.3.3
-        version: 5.8.3
-
   packages/stylesheet:
     devDependencies:
       postcss:
@@ -138,12 +109,12 @@ importers:
 
   packages/tailwindcss3-plugin:
     dependencies:
-      '@exem/design-token':
-        specifier: workspace:*
-        version: link:../design-token
-      '@exem/stylesheet':
-        specifier: workspace:*
-        version: link:../stylesheet
+      exem-design-token-test:
+        specifier: ^0.2.1
+        version: 0.2.1
+      exem-stylesheet-test:
+        specifier: ^0.2.0
+        version: 0.2.0
     devDependencies:
       tailwindcss:
         specifier: ^3.4.0
@@ -2881,6 +2852,12 @@ packages:
   execa@8.0.1:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
+
+  exem-design-token-test@0.2.1:
+    resolution: {integrity: sha512-nBiyEZvxJMAY/qKemzWUx/D7CGX3jQAV3ITN0NPcvAmG3fortuGTgYA4SmyIzKQNnfnGRN3aIlkCf2JkdWy+SQ==}
+
+  exem-stylesheet-test@0.2.0:
+    resolution: {integrity: sha512-O3iFtK0Hjb52OmLq4hX5fBNvpWGAwrvmRROy8OUSjYH+4AHACT2tUwJTUx4j76wVz+EaCLJ2+sw5CJsdYirbSA==}
 
   express@4.21.2:
     resolution: {integrity: sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==}
@@ -8045,6 +8022,10 @@ snapshots:
       onetime: 6.0.0
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
+
+  exem-design-token-test@0.2.1: {}
+
+  exem-stylesheet-test@0.2.0: {}
 
   express@4.21.2:
     dependencies:

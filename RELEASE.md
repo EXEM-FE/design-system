@@ -119,12 +119,11 @@ stylesheet와 design-token은 연결되어 있어 함께 업데이트됩니다:
 2. **@exem/design-token**: 중간 (stylesheet 변경에 따라)
 3. **@exem/tailwindcss3-plugin**: 중간 (기능 추가시)
 4. **@exem/react**: 높음 (컴포넌트 추가/수정 빈번)
-5. **@exem/react-theming**: 낮음 (테마 시스템 안정화 후)
 6. **@exem/icon**: 중간 (아이콘 추가시)
 
 ### 배포 우선순위
 ```
-stylesheet → design-token → (tailwind-plugin, react, theming, icon)
+stylesheet → design-token → (tailwind-plugin, react, icon)
 ```
 
 ## 🚨 주의사항

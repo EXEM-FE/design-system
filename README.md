@@ -21,7 +21,6 @@ EXEM 제품군을 위한 통합 디자인 시스템
 | [@exem/tailwindcss3-plugin](./packages/tailwindcss3-plugin) | Tailwind CSS 3 통합 플러그인 | 0.1.0 |
 | [@exem/icon](./packages/icon) | SVG 아이콘 컴포넌트 | 0.1.0 |
 | [@exem/react](./packages/react) | React UI 컴포넌트 | 0.1.0 |
-| [@exem/react-theming](./packages/react-theming) | 테마 시스템 | 0.1.0 |
 
 ## 패키지 의존성 구조
 
@@ -38,8 +37,6 @@ graph TD
     
     REACT[⚛️ @exem/react<br/>React 컴포넌트<br/>- Button, Card 등]
     
-    THEMING[🎭 @exem/react-theming<br/>테마 시스템<br/>- ThemeProvider]
-    
     ICON[🎯 @exem/icon<br/>아이콘 시스템]
     
     %% 최종 애플리케이션
@@ -49,15 +46,11 @@ graph TD
     CSS --> TOKEN
     TOKEN --> TW
     TOKEN --> REACT  
-    TOKEN --> THEMING
-    
     CSS -.-> TW
     CSS -.-> REACT
-    CSS -.-> THEMING
     
     TW --> APP
     REACT --> APP
-    THEMING --> APP
     ICON --> APP
     
     %% 스타일
@@ -68,7 +61,7 @@ graph TD
     
     class CSS source
     class TOKEN token
-    class TW,REACT,THEMING,ICON integration
+    class TW,REACT,ICON integration
     class APP app
 ```
 
@@ -104,17 +97,14 @@ module.exports = {
 ### ⚛️ React 컴포넌트 사용자
 ```bash
 # 1. 컴포넌트 설치
-pnpm add @exem/react @exem/react-theming
+pnpm add @exem/react
 
 # 2. 애플리케이션에서 사용
 import { Button, Card } from '@exem/react'
-import { ThemeProvider } from '@exem/react-theming'
 
-<ThemeProvider>
-  <Card>
-    <Button variant="primary">EXEM 버튼</Button>
-  </Card>
-</ThemeProvider>
+<Card>
+  <Button variant="primary">EXEM 버튼</Button>
+</Card>
 ```
 
 ### 🎯 토큰만 사용하는 사용자

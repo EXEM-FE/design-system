@@ -26,7 +26,7 @@
     "react-dom": ">=19.0.0"
   },
   "dependencies": {
-    "@exem/design-token": "workspace:*",
+    "exem-design-token-test": "workspace:*",
     "@exem/icon": "workspace:*"
   },
   "devDependencies": {
