@@ -1,4 +1,4 @@
-# @exem/react
+# exem-react
 
 EXEM 디자인 시스템의 React 컴포넌트 라이브러리입니다.
 
@@ -17,13 +17,13 @@ EXEM의 모든 제품에서 사용할 수 있는 재사용 가능한 React 컴�
 ## 설치
 
 ```bash
-pnpm add @exem/react @exem/design-token @exem/icon
+pnpm add exem-react exem-design-token exem-icon
 ```
 
 ## 사용법
 
 ```tsx
-import { Button, Input, Modal } from '@exem/react'
+import { Button, Input, Modal } from 'exem-react'
 
 function App() {
   return (
@@ -116,8 +116,8 @@ pnpm build-storybook
 - React DOM >=19.0.0
 
 ### Dependencies
-- @exem/design-token - 디자인 토큰
-- @exem/icon - 아이콘 라이브러리
+- exem-design-token - 디자인 토큰
+- exem-icon - 아이콘 라이브러리
 
 ## 컴포넌트 개발 가이드
 

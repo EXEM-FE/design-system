@@ -1,10 +1,10 @@
-# @exem/tailwindcss3-plugin
+# exem-tailwindcss-plugin
 
 EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 고급 플러그인입니다.
 
 ## 개요
 
-`@exem/design-token`의 토큰들을 기반으로 Tailwind CSS 유틸리티 클래스와 컴포넌트를 자동 생성하는 플러그인입니다. EXEM 디자인 시스템을 Tailwind 프로젝트에서 완전히 활용할 수 있습니다.
+`exem-design-token`의 토큰들을 기반으로 Tailwind CSS 유틸리티 클래스와 컴포넌트를 자동 생성하는 플러그인입니다. EXEM 디자인 시스템을 Tailwind 프로젝트에서 완전히 활용할 수 있습니다.
 
 ## 주요 기능
 
@@ -12,14 +12,14 @@ EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 
 - **동적 그라데이션**: `matchUtilities`를 활용한 방향 지정 가능한 EXEM 로고 그라데이션
 - **타이포그래피 스케일**: fontSize에 header-1 ~ caption까지의 디자인 시스템 스케일 제공
 - **폰트 웨이트**: regular, medium, semibold, bold의 일관된 폰트 두께
-- **CSS 변수 자동 로드**: @exem/stylesheet 자동 import
+- **CSS 변수 자동 로드**: exem-stylesheet 자동 import
 
 ## 설치
 
 ```bash
-npm install @exem/tailwindcss3-plugin
+npm install exem-tailwindcss-plugin
 # 또는
-pnpm add @exem/tailwindcss3-plugin
+pnpm add exem-tailwindcss-plugin
 ```
 
 ## 사용법
@@ -35,7 +35,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@exem/tailwindcss3-plugin'),
+    require('exem-tailwindcss-plugin'),
   ],
 }
 ```
@@ -179,8 +179,8 @@ pnpm typecheck
 ## 의존성
 
 ### Dependencies
-- `@exem/stylesheet` - CSS 변수 소스
-- `@exem/design-token` - TypeScript 토큰 정의
+- `exem-stylesheet` - CSS 변수 소스
+- `exem-design-token` - TypeScript 토큰 정의
 
 ### PeerDependencies
 - `tailwindcss` ^3.0.0
@@ -192,9 +192,9 @@ pnpm typecheck
 
 ## 관련 패키지
 
-- `@exem/stylesheet` - CSS 변수 정의
-- `@exem/design-token` - TypeScript 토큰
-- `@exem/react` - React 컴포넌트
+- `exem-stylesheet` - CSS 변수 정의
+- `exem-design-token` - TypeScript 토큰
+- `exem-react` - React 컴포넌트
 
 ## 라이선스
 

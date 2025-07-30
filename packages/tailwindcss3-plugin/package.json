@@ -1,5 +1,5 @@
 {
-	"name": "exem-tailwindcss3-plugin-test",
+	"name": "exem-tailwindcss-plugin",
 	"version": "0.1.2",
 	"description": "EXEM Design System - Tailwind CSS 3 Plugin",
 	"main": "dist/index.js",
@@ -22,8 +22,8 @@
 		"css"
 	],
 	"dependencies": {
-		"exem-stylesheet-test": "^0.2.0",
-		"exem-design-token-test": "^0.2.1"
+		"exem-stylesheet": "workspace:*",
+		"exem-design-token": "workspace:*"
 	},
 	"devDependencies": {
 		"tailwindcss": "^3.4.0",

@@ -1,4 +1,4 @@
-# @exem/stylesheet
+# exem-stylesheet
 
 EXEM 디자인 시스템의 CSS 변수와 전역 스타일을 제공하는 패키지입니다.
 
@@ -17,7 +17,7 @@ EXEM 디자인 시스템의 모든 CSS 변수(color, radius, shadow, breakpoint)
 ## 설치
 
 ```bash
-pnpm add @exem/stylesheet
+pnpm add exem-stylesheet
 ```
 
 ## 사용법
@@ -26,17 +26,17 @@ pnpm add @exem/stylesheet
 
 ```typescript
 // 전역 CSS 변수 로드
-import '@exem/stylesheet'
+import 'exem-stylesheet'
 
 // 또는 직접 CSS 파일 임포트
-import '@exem/stylesheet/src/global.css'
+import 'exem-stylesheet/src/global.css'
 ```
 
 ### CSS에서 임포트
 
 ```css
 /* CSS 파일에서 임포트 */
-@import '@exem/stylesheet/src/global.css';
+@import 'exem-stylesheet/src/global.css';
 ```
 
 ### HTML에서 사용
@@ -45,7 +45,7 @@ import '@exem/stylesheet/src/global.css'
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="node_modules/@exem/stylesheet/dist/index.css">
+  <link rel="stylesheet" href="node_modules/exem-stylesheet/dist/index.css">
 </head>
 <body>
   <div style="color: var(--color-text-primary); background: var(--color-elevation-elevation-0);">
@@ -196,7 +196,7 @@ stylesheet/
 
 ## 관련 패키지
 
-- `@exem/design-token` - 이 패키지를 기반으로 TypeScript 토큰 생성
+- `exem-design-token` - 이 패키지를 기반으로 TypeScript 토큰 생성
 
 ## 라이선스
 

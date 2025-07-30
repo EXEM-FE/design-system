@@ -1,10 +1,12 @@
-# @exem/icon
+# exem-icon
 
 EXEM 디자인 시스템의 아이콘 라이브러리입니다.
 
 ## 개요
 
-EXEM의 모든 제품에서 사용되는 일관된 아이콘 세트를 제공합니다. SVG 기반의 확장 가능한 아이콘들을 React 컴포넌트 형태로 제공하여 개발자가 쉽게 사용할 수 있습니다.
+**주의: 이 패키지는 아직 미구현 상태입니다.**
+
+EXEM의 모든 제품에서 사용될 예정인 일관된 아이콘 세트를 제공할 예정입니다. SVG 기반의 확장 가능한 아이콘들을 React 컴포넌트 형태로 제공하여 개발자가 쉽게 사용할 수 있도록 계획되어 있습니다.
 
 ## 주요 기능
 
@@ -17,13 +19,13 @@ EXEM의 모든 제품에서 사용되는 일관된 아이콘 세트를 제공합
 ## 설치
 
 ```bash
-pnpm add @exem/icon
+pnpm add exem-icon
 ```
 
 ## 사용법
 
 ```tsx
-import { HomeIcon, SearchIcon, UserIcon } from '@exem/icon'
+import { HomeIcon, SearchIcon, UserIcon } from 'exem-icon'
 
 function App() {
   return (

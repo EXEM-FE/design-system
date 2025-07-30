@@ -1,5 +1,5 @@
 {
-	"name": "@exem/design-system",
+	"name": "exem-design-system",
 	"private": true,
 	"version": "0.1.0",
 	"description": "EXEM Design System - Monorepo",

@@ -57,12 +57,12 @@ importers:
 
   packages/react:
     dependencies:
-      '@exem/icon':
-        specifier: workspace:*
-        version: link:../icon
-      exem-design-token-test:
+      exem-design-token:
         specifier: workspace:*
         version: link:../design-token
+      exem-icon:
+        specifier: workspace:*
+        version: link:../icon
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.6.6
@@ -109,12 +109,12 @@ importers:
 
   packages/tailwindcss3-plugin:
     dependencies:
-      exem-design-token-test:
-        specifier: ^0.2.1
-        version: 0.2.1
-      exem-stylesheet-test:
-        specifier: ^0.2.0
-        version: 0.2.0
+      exem-design-token:
+        specifier: workspace:*
+        version: link:../design-token
+      exem-stylesheet:
+        specifier: workspace:*
+        version: link:../stylesheet
     devDependencies:
       tailwindcss:
         specifier: ^3.4.0
@@ -2861,12 +2861,6 @@ packages:
   execa@5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
-
-  exem-design-token-test@0.2.1:
-    resolution: {integrity: sha512-nBiyEZvxJMAY/qKemzWUx/D7CGX3jQAV3ITN0NPcvAmG3fortuGTgYA4SmyIzKQNnfnGRN3aIlkCf2JkdWy+SQ==}
-
-  exem-stylesheet-test@0.2.0:
-    resolution: {integrity: sha512-O3iFtK0Hjb52OmLq4hX5fBNvpWGAwrvmRROy8OUSjYH+4AHACT2tUwJTUx4j76wVz+EaCLJ2+sw5CJsdYirbSA==}
 
   expect-type@1.2.2:
     resolution: {integrity: sha512-JhFGDVJ7tmDJItKhYgJCGLOWjuK9vPxiXoUFLwLDc99NlmklilbiQJwoctZtt13+xMw91MCk/REan6MWHqDjyA==}
@@ -7982,10 +7976,6 @@ snapshots:
       onetime: 5.1.2
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
-
-  exem-design-token-test@0.2.1: {}
-
-  exem-stylesheet-test@0.2.0: {}
 
   expect-type@1.2.2: {}
 

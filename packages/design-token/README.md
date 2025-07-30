@@ -1,4 +1,4 @@
-# exem-design-token-test
+# exem-design-token
 
 EXEM 디자인 시스템의 디자인 토큰을 TypeScript에서 활용할 수 있는 패키지입니다.
 
@@ -17,7 +17,7 @@ CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-J
 ## 설치
 
 ```bash
-npm install exem-design-token-test
+npm install exem-design-token
 ```
 
 ## 사용법
@@ -26,7 +26,7 @@ npm install exem-design-token-test
 
 ```typescript
 // 방법 1: 개별 토큰 직접 import (권장)
-import { color, radius, shadow, breakpoint } from 'exem-design-token-test'
+import { color, radius, shadow, breakpoint } from 'exem-design-token'
 
 // CSS-in-JS에서 사용
 const Button = styled.button`
@@ -37,7 +37,7 @@ const Button = styled.button`
 `
 
 // 방법 2: tokens 객체를 통한 import
-import { tokens } from 'exem-design-token-test'
+import { tokens } from 'exem-design-token'
 
 const buttonStyle = {
   backgroundColor: tokens.color['surface-accent-default'], // var(--color-surface-accent-default)
@@ -51,12 +51,12 @@ const buttonStyle = {
 CSS 변수를 실제로 사용하려면 별도로 stylesheet 패키지를 설치하세요:
 
 ```bash
-npm install exem-stylesheet-test
+npm install exem-stylesheet
 ```
 
 ```css
 /* 또는 CSS에서 직접 import */
-@import 'exem-stylesheet-test/dist/index.css';
+@import 'exem-stylesheet/dist/index.css';
 ```
 
 ## 토큰 구조
@@ -103,7 +103,7 @@ pnpm generate
 ```
 
 이 명령어는:
-1. `@exem/stylesheet/src/global.css`에서 CSS 변수 추출
+1. `exem-stylesheet/src/global.css`에서 CSS 변수 추출
 2. 접두사별로 토큰 분류 (color, radius, shadow, breakpoint)
 3. TypeScript 파일로 자동 생성
 4. Biome으로 코드 포맷팅
@@ -150,8 +150,8 @@ design-token/
 
 ## 관련 패키지
 
-- `exem-stylesheet-test` - CSS 변수 정의 소스
-- `exem-tailwindcss3-plugin-test` - Tailwind CSS 플러그인에서 토큰 활용
+- `exem-stylesheet` - CSS 변수 정의 소스
+- `exem-tailwindcss-plugin` - Tailwind CSS 플러그인에서 토큰 활용
 
 ## 라이선스
 

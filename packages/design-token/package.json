@@ -1,5 +1,5 @@
 {
-	"name": "exem-design-token-test",
+	"name": "exem-design-token",
 	"version": "0.2.1",
 	"description": "EXEM Design System - Design Tokens",
 	"main": "dist/index.js",
