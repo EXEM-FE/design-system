@@ -10,7 +10,7 @@
 		"build": "pnpm -r build",
 		"test": "vitest",
 		"lint": "biome check .",
-		"lint:fix": "biome check --apply .",
+		"lint:fix": "biome check --write .",
 		"format": "biome format --write .",
 		"typecheck": "pnpm -r typecheck",
 		"dev": "pnpm -r --parallel dev",

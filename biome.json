@@ -34,14 +34,11 @@
 		}
 	},
 	"files": {
-		"includes": [
-			"packages/**/*.ts",
-			"packages/**/*.tsx",
-			"packages/**/*.js",
-			"packages/**/*.jsx",
-			"!packages/**/dist/**",
-			"!packages/**/node_modules/**",
-			"!.changeset/**"
+		"includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+		"experimentalScannerIgnores": [
+			"**/dist/**",
+			"**/node_modules/**",
+			"**/.changeset/**"
 		]
 	}
 }
