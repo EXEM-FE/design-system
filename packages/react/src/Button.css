@@ -1,0 +1,55 @@
+/* Button 컴포넌트 스타일 */
+
+.button-primary:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button-primary:disabled {
+  background-color: var(--button-disabled-bg);
+  opacity: 0.5;
+}
+
+.button-primary-subtle:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button-primary-subtle:disabled {
+  background-color: var(--button-disabled-bg);
+  opacity: 0.5;
+}
+
+.button-accent:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button-accent:disabled {
+  background-color: var(--button-disabled-bg);
+  opacity: 0.5;
+}
+
+.button-accent-subtle:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button-accent-subtle:disabled {
+  background-color: var(--button-disabled-bg);
+  opacity: 0.5;
+}
+
+.button-critical:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button-critical:disabled {
+  background-color: var(--button-disabled-bg);
+  opacity: 0.5;
+}
+
+.button-critical-subtle:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button-critical-subtle:disabled {
+  background-color: var(--button-disabled-bg);
+  opacity: 0.5;
+}

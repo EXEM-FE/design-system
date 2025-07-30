@@ -1,44 +1,47 @@
 {
-	"name": "exem-react",
-	"version": "0.1.1",
-	"description": "EXEM Design System - React Components",
-	"main": "dist/index.js",
-	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "tsup",
-		"dev": "tsup --watch",
-		"typecheck": "tsc --noEmit",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
-	},
-	"keywords": [
-		"react",
-		"components",
-		"exem",
-		"design-system"
-	],
-	"peerDependencies": {
-		"react": ">=19.0.0",
-		"react-dom": ">=19.0.0"
-	},
-	"dependencies": {
-		"exem-design-token": "workspace:*",
-		"exem-icon": "workspace:*"
-	},
-	"devDependencies": {
-		"@storybook/addon-essentials": "^7.6.6",
-		"@storybook/react": "^7.6.6",
-		"@storybook/react-vite": "^7.6.6",
-		"@types/react": "^19.1.9",
-		"@types/react-dom": "^19.1.7",
-		"react": "^19.1.1",
-		"react-dom": "^19.1.1",
-		"storybook": "^7.6.6",
-		"tsup": "^8.0.1",
-		"typescript": "^5.3.3"
-	}
+  "name": "exem-react",
+  "version": "0.1.1",
+  "description": "EXEM Design System - React Components",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "exem",
+    "design-system"
+  ],
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "exem-design-token": "workspace:*",
+    "exem-icon": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "storybook": "^7.6.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
 }

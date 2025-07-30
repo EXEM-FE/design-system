@@ -6,6 +6,7 @@
 	"workspaces": [
 		"packages/*"
 	],
+	"type": "module",
 	"scripts": {
 		"build": "pnpm -r build",
 		"test": "vitest",
@@ -13,19 +14,26 @@
 		"lint:fix": "biome check --write .",
 		"format": "biome format --write .",
 		"typecheck": "pnpm -r typecheck",
-		"dev": "pnpm -r --parallel dev",
+		"dev": "concurrently \"pnpm -r --parallel dev\" \"pnpm watch:tokens\"",
+		"dev:packages": "pnpm -r --parallel dev",
+		"watch:tokens": "node scripts/watch-tokens.js",
+		"deps:update": "node scripts/update-dependencies.js update",
+		"deps:revert": "node scripts/update-dependencies.js revert",
 		"clean": "rm -rf packages/*/dist packages/*/node_modules",
 		"changeset": "changeset",
-		"version": "changeset version",
-		"release": "pnpm build && changeset publish",
+		"version": "changeset version && pnpm deps:revert",
+		"release": "pnpm deps:update && pnpm build && changeset publish && pnpm deps:revert",
 		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.1.3",
 		"@changesets/cli": "^2.27.1",
 		"@types/node": "^24.1.0",
+		"chokidar": "^4.0.3",
+		"concurrently": "^9.2.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.2",
+		"nodemon": "^3.1.10",
 		"typescript": "^5.3.3",
 		"vitest": "^3.2.4"
 	},
