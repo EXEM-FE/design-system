@@ -1,0 +1,24 @@
+{
+  "name": "@exem/docs",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "EXEM Design System Documentation Site",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.12.8",
+    "exem-design-token": "workspace:*",
+    "exem-stylesheet": "workspace:*",
+    "exem-tailwindcss-plugin": "workspace:*"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.3.3"
+  }
+}

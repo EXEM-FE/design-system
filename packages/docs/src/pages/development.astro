@@ -1,0 +1,79 @@
+---
+layout: '../layouts/Layout.astro'
+title: 'Development'
+---
+
+<style>
+  body {
+    background: #141414;
+    color: #fff;
+  }
+</style>
+
+<div style="display: flex; flex-direction: column; min-height: 100vh; background: #141414; color: #fff;">
+  <!-- Top Navigation -->
+  <header style="height: 56px; background: #1f1f1f; border-bottom: 1px solid #303030; display: flex; align-items: center; padding: 0 32px; justify-content: space-between;">
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <a href="/" style="font-weight: 600; font-size: 18px; color: #fff; text-decoration: none;">
+        EXEM Design
+      </a>
+      <nav style="display: flex; gap: 16px; font-size: 14px;">
+        <a href="/design" style="color: #ccc; font-weight: 400; text-decoration: none;">Design</a>
+        <a href="/development" style="color: #1677ff; font-weight: 600; text-decoration: none;">Development</a>
+        <a href="/overview" style="color: #ccc; font-weight: 400; text-decoration: none;">Components</a>
+        <a href="/resources" style="color: #ccc; font-weight: 400; text-decoration: none;">Resources</a>
+      </nav>
+    </div>
+    <div><!-- 오른쪽 아이콘 --></div>
+  </header>
+
+  <div style="display: flex; flex: 1;">
+    <!-- Sidebar -->
+    <aside style="width: 240px; background: #1f1f1f; border-right: 1px solid #303030; padding: 24px 16px; height: calc(100vh - 56px); overflow-y: auto;">
+      <div style="font-weight: 600; font-size: 16px; margin-bottom: 16px;">
+        EXEM Design of React
+      </div>
+      <ul style="list-style: none; padding: 0; line-height: 2em; color: #ccc;">
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Changelog</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Basic Usage</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Getting Started</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Usage with Next.js</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Advanced</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Customize Theme</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main style="flex: 1; padding: 48px 64px; background: #141414;">
+      <h1 style="font-size: 32px; font-weight: 600; margin-bottom: 16px;">
+        EXEM Design of React
+      </h1>
+      <p style="color: #999; margin-bottom: 32px;">
+        Following the EXEM Design specification, we developed a React UI library
+        that contains a set of high-quality components and demos for building
+        rich, interactive user interfaces.
+      </p>
+
+      <div style="display: flex; gap: 48px; align-items: center; margin-bottom: 40px;">
+        <img src="/exem-logo.png" alt="EXEM Design Logo" style="height: 80px;" />
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="3" stroke-linecap="round">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+        <img src="/react-img.png" alt="React Logo" style="height: 80px;" />
+      </div>
+
+      <section>
+        <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: #fff;">✨ Features</h2>
+        <ul style="line-height: 2em; font-size: 14px; color: #ccc; padding-left: 1em;">
+          <li>🌈 Enterprise-class UI designed for web applications.</li>
+          <li>📦 A set of high-quality React components out of the box.</li>
+          <li>✍️ Written in TypeScript with predictable static types.</li>
+          <li>🧩 Full set of design resources and development tools.</li>
+          <li>🌍 Internationalization support for global use.</li>
+          <li>🎨 Powerful theme customization options.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</div>

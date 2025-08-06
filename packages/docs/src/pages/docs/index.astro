@@ -1,0 +1,21 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+
+export default function DocsPage() {
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    fetch("/docs/intro.md")
+      .then((res) => res.text())
+      .then((txt) => setContent(txt));
+  }, []);
+
+  return (
+    <main className="p-6">
+      <h1 className="text-2xl font-bold mb-4"> FE1 디자인 시스템 문서</h1>
+      <ReactMarkdown>{content}</ReactMarkdown>
+    </main>
+  );
+}

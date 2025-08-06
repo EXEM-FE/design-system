@@ -1,0 +1,89 @@
+---
+layout: '../../layouts/Layout.astro'
+title: 'Components Overview'
+---
+
+<style>
+  body {
+    background: #141414;
+    color: #fff;
+    font-family: sans-serif;
+  }
+
+  header {
+    height: 56px;
+    background: #1f1f1f;
+    border-bottom: 1px solid #303030;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    justify-content: space-between;
+  }
+
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 14px;
+  }
+
+  nav a.active {
+    color: #1677ff;
+    font-weight: 600;
+  }
+
+  .sidebar {
+    width: 240px;
+    background: #1f1f1f;
+    border-right: 1px solid #303030;
+    padding: 24px 16px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+
+  .main {
+    flex: 1;
+    padding: 48px 64px;
+    background: #141414;
+  }
+
+  .section-box {
+    background: #1f1f1f;
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid #303030;
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .section-description {
+    font-size: 14px;
+    color: #999999;
+  }
+</style>
+
+<header>
+  <div style="display: flex; gap: 24px; align-items: center;">
+    <a href="/" style="font-weight: 600; font-size: 18px; color: #fff; text-decoration: none;">
+      EXEM Design
+    </a>
+    <nav>
+      <a href="/design">Design</a>
+      <a href="/development">Development</a>
+      <a href="/overview" class="active">Components</a>
+      <a href="/resources">Resources</a>
+    </nav>
+  </div>
+  <div>{/* 오른쪽 아이콘 자리 */}</div>
+</header>
+
+<div style="display: flex;">
+  <aside class="sidebar">
+    <div style="font-weight: 600; font-size: 16px; margin-bottom: 16px;">Components</div>
+    <ul style="list-style: none; padding: 0; line-height: 2em; color: #ccc;

@@ -1,0 +1,70 @@
+---
+layout: '../layouts/Layout.astro'
+title: 'Design'
+---
+
+<style>
+  body {
+    background: #141414;
+    color: #fff;
+  }
+</style>
+
+<div style="display: flex; flex-direction: column; min-height: 100vh; background: #141414; color: #fff;">
+  <!-- Top Navigation Tabs -->
+  <header style="height: 56px; background: #1f1f1f; border-bottom: 1px solid #303030; display: flex; align-items: center; padding: 0 32px; justify-content: space-between;">
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <a href="/" style="font-weight: 600; font-size: 18px; color: #fff; text-decoration: none;">
+        EXEM Design
+      </a>
+      <nav style="display: flex; gap: 16px; font-size: 14px;">
+        <a href="/design" style="color: #1677ff; font-weight: 600; text-decoration: none;">Design</a>
+        <a href="/development" style="color: #ccc; font-weight: 400; text-decoration: none;">Development</a>
+        <a href="/overview" style="color: #ccc; font-weight: 400; text-decoration: none;">Components</a>
+        <a href="/resources" style="color: #ccc; font-weight: 400; text-decoration: none;">Resources</a>
+      </nav>
+    </div>
+    <div><!-- 오른쪽 아이콘 자리 --></div>
+  </header>
+
+  <div style="display: flex; flex: 1;">
+    <!-- Sidebar -->
+    <aside style="width: 240px; background: #1f1f1f; border-right: 1px solid #303030; padding: 24px 16px; height: calc(100vh - 56px); overflow-y: auto;">
+      <div style="font-weight: 600; font-size: 16px; margin-bottom: 16px;">EXEM Design</div>
+      <ul style="list-style: none; padding: 0; line-height: 2em; color: #ccc;">
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Introduction</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Design Values</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Cases</a></li>
+      </ul>
+
+      <div style="font-weight: 600; font-size: 16px; margin-top: 24px;">Global Styles</div>
+      <ul style="list-style: none; padding: 0; line-height: 2em; color: #ccc;">
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Colors</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Layout</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Font</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Icons</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Dark Mode</a></li>
+        <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Shadow</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main style="flex: 1; padding: 48px 64px; background: #141414;">
+      <h1 style="font-size: 32px; font-weight: 600; margin-bottom: 24px; color: #fff;">Introduction</h1>
+      <img src="/design-logo.jpeg" alt="illustration" style="width: 100%; max-width: 800px; margin-bottom: 32px;" />
+      <p style="font-size: 14px; color: #ccc; line-height: 1.8; margin-bottom: 16px;">
+        EXEM은 다양한 엔터프라이즈 레벨의 모니터링 제품을 보유하고 있으며,
+        복잡한 IT 환경에서 빠르게 변화하는 요구사항과 병렬적인 개발 워크플로우에
+        민첩하게 대응해야 합니다. 이 과정에서 유사한 UI 패턴과 콘텐츠들이 반복적으로 등장하며,
+        이를 체계적으로 정리하고 재사용 가능한 디자인 컴포넌트로 추상화할 필요가 있습니다.
+      </p>
+      <p style="font-size: 14px; color: #ccc; line-height: 1.8; margin-bottom: 16px;">
+        EXEM 디자인팀은 일관된 사용자 경험을 제공하고 유지보수 효율을 높이기 위해,
+        “명확함(Certain)”, “직관성(Natural)”, “의미 중심(Meaningful)”, “유연한 확장성(Growing)”
+        이라는 네 가지 핵심 가치에 기반한 디자인 시스템을 구축하고 있습니다.
+        이 시스템은 인터페이스의 일관성을 유지하고 중복 개발을 줄여,
+        디자이너와 개발자가 보다 나은 사용자 경험에 집중할 수 있도록 돕습니다.
+      </p>
+    </main>
+  </div>
+</div>

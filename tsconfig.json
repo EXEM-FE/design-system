@@ -25,7 +25,9 @@
 			"@exem/icon": ["./packages/icon/src"],
 			"@exem/icon/*": ["./packages/icon/src/*"],
 			"@exem/react": ["./packages/react/src"],
-			"@exem/react/*": ["./packages/react/src/*"]
+			"@exem/react/*": ["./packages/react/src/*"],
+			"@exem/docs": ["./packages/docs/src"],
+			"@exem/docs/*": ["./packages/docs/src/*"]
 		}
 	},
 	"include": ["packages/*/src/**/*"],

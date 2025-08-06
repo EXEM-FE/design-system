@@ -2,8 +2,17 @@
 	"name": "exem-stylesheet",
 	"version": "0.2.0",
 	"description": "EXEM Design System - CSS Utilities and Base Styles",
-	"main": "dist/index.css",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./css": "./dist/index.css"
+	},
 	"files": [
 		"dist"
 	],
