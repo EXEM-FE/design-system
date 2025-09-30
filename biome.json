@@ -6,10 +6,28 @@
     "rules": {
       "recommended": true,
       "style": {
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "off",
+        "useBlockStatements": "error",
+        "useConst": "error"
       },
       "correctness": {
-        "useExhaustiveDependencies": "warn"
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "warn",
+        "noExcessiveNestedTestSuites": "error",
+        "noForEach": "warn"
+      },
+      "suspicious": {
+        "noDuplicateClassMembers": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDebugger": "warn",
+        "noConsole": "warn"
+      },
+      "performance": {
+        "noBarrelFile": "off",
+        "noDelete": "warn"
       }
     }
   },
@@ -38,7 +56,37 @@
     "experimentalScannerIgnores": [
       "**/dist/**",
       "**/node_modules/**",
-      "**/.changeset/**"
+      "**/.changeset/**",
+      "**/.husky/**",
+      "**/build/**",
+      "**/.astro/**"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.config.js", "**/*.config.ts", "**/*.config.mjs"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useExportType": "off"
+          }
+        }
+      }
+    }
+  ]
 }
