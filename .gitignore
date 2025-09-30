@@ -98,6 +98,7 @@ temp/
 
 # Agent
 .claude/
+.ai/
 
 # Claude Code guidance file
 CLAUDE.md

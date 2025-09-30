@@ -87,6 +87,20 @@
           }
         }
       }
+    },
+    {
+      "includes": [
+        "scripts/**/*.js",
+        "**/generateToken.ts",
+        "**/generateToken.js"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
     }
   ]
 }

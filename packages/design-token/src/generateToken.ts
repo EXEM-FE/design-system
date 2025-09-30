@@ -44,11 +44,26 @@ function extractAndGroupCssVariables(
   let match: RegExpExecArray | null = regex.exec(content)
   while (match !== null) {
     const name = match[1]
-    const value = match[2].trim()
+    const value = match[2]
+
+    // undefined 체크
+    if (!name || !value) {
+      match = regex.exec(content)
+      continue
+    }
+
+    const trimmedValue = value.trim()
 
     // 복합 접두사 처리를 포함한 접두사 추출
     const compoundPrefixes = ["font-weight", "inset-shadow", "drop-shadow"]
-    let prefix = name.split("-")[0]
+    const firstPart = name.split("-")[0]
+
+    if (!firstPart) {
+      match = regex.exec(content)
+      continue
+    }
+
+    let prefix = firstPart
 
     for (const compoundPrefix of compoundPrefixes) {
       if (name.startsWith(compoundPrefix)) {
@@ -60,7 +75,11 @@ function extractAndGroupCssVariables(
     if (!grouped[prefix]) {
       grouped[prefix] = {}
     }
-    grouped[prefix][name] = value
+
+    const prefixGroup = grouped[prefix]
+    if (prefixGroup) {
+      prefixGroup[name] = trimmedValue
+    }
 
     match = regex.exec(content)
   }
@@ -109,7 +128,7 @@ function generateTokens(
 
 // kebab-case를 camelCase로 변환하는 함수
 function toCamelCase(str: string): string {
-  return str.replace(/-([a-z])/g, g => g[1].toUpperCase())
+  return str.replace(/-([a-z])/g, (_match, char: string) => char.toUpperCase())
 }
 
 // global.css 파일을 처리하는 메인 함수
