@@ -9,6 +9,12 @@
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitAny": true,
 		"module": "ESNext",
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
@@ -31,5 +37,5 @@
 		}
 	},
 	"include": ["packages/*/src/**/*"],
-	"exclude": ["node_modules", "dist", "build"]
+	"exclude": ["node_modules", "dist", "build", ".changeset", ".husky"]
 }
