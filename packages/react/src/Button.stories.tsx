@@ -12,22 +12,23 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: "select",
       options: [
+        "contained",
+        "outlined",
+        "text",
         "primary",
-        "primary-subtle",
         "accent",
-        "accent-subtle",
         "critical",
-        "critical-subtle",
       ],
+    },
+    color: {
+      control: "select",
+      options: ["primary", "secondary", "accent", "critical"],
     },
     size: {
       control: "select",
-      options: ["xs", "sm", "md", "lg", "xl"],
+      options: ["small", "medium", "large", "xlarge"],
     },
     disabled: {
-      control: "boolean",
-    },
-    asChild: {
       control: "boolean",
     },
   },
@@ -39,55 +40,62 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     children: "Button",
-    variant: "primary",
-    size: "md",
+    variant: "contained",
+    color: "primary",
+    size: "medium",
   },
 }
 
-export const PrimarySubtle: Story = {
+export const PrimaryOutlined: Story = {
   args: {
     children: "Button",
-    variant: "primary-subtle",
-    size: "md",
+    variant: "outlined",
+    color: "primary",
+    size: "medium",
   },
 }
 
 export const Accent: Story = {
   args: {
     children: "Button",
-    variant: "accent",
-    size: "md",
+    variant: "contained",
+    color: "accent",
+    size: "medium",
   },
 }
 
-export const AccentSubtle: Story = {
+export const AccentOutlined: Story = {
   args: {
     children: "Button",
-    variant: "accent-subtle",
-    size: "md",
+    variant: "outlined",
+    color: "accent",
+    size: "medium",
   },
 }
 
 export const Critical: Story = {
   args: {
     children: "Button",
-    variant: "critical",
-    size: "md",
+    variant: "contained",
+    color: "critical",
+    size: "medium",
   },
 }
 
-export const CriticalSubtle: Story = {
+export const CriticalOutlined: Story = {
   args: {
     children: "Button",
-    variant: "critical-subtle",
-    size: "md",
+    variant: "outlined",
+    color: "critical",
+    size: "medium",
   },
 }
 
 export const Disabled: Story = {
   args: {
     children: "Button",
-    variant: "primary",
+    variant: "contained",
+    color: "primary",
     disabled: true,
   },
 }
@@ -95,11 +103,10 @@ export const Disabled: Story = {
 export const Sizes: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-      <Button size="xs">Extra Small</Button>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-      <Button size="xl">Extra Large</Button>
+      <Button size="small">Small</Button>
+      <Button size="medium">Medium</Button>
+      <Button size="large">Large</Button>
+      <Button size="xlarge">Extra Large</Button>
     </div>
   ),
 }
@@ -113,12 +120,24 @@ export const AllVariants: Story = {
         gridTemplateColumns: "repeat(3, 1fr)",
       }}
     >
-      <Button variant="primary">Primary</Button>
-      <Button variant="primary-subtle">Primary Subtle</Button>
-      <Button variant="accent">Accent</Button>
-      <Button variant="accent-subtle">Accent Subtle</Button>
-      <Button variant="critical">Critical</Button>
-      <Button variant="critical-subtle">Critical Subtle</Button>
+      <Button variant="contained" color="primary">
+        Primary
+      </Button>
+      <Button variant="outlined" color="primary">
+        Primary Outlined
+      </Button>
+      <Button variant="text" color="primary">
+        Primary Text
+      </Button>
+      <Button variant="contained" color="accent">
+        Accent
+      </Button>
+      <Button variant="outlined" color="accent">
+        Accent Outlined
+      </Button>
+      <Button variant="contained" color="critical">
+        Critical
+      </Button>
     </div>
   ),
 }
@@ -126,15 +145,15 @@ export const AllVariants: Story = {
 export const WithIcon: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "1rem" }}>
-      <Button>
+      <Button variant="contained" color="primary">
         <span style={{ marginRight: "0.5rem" }}>📄</span>
         문서
       </Button>
-      <Button variant="accent">
+      <Button variant="contained" color="accent">
         <span style={{ marginRight: "0.5rem" }}>✓</span>
         확인
       </Button>
-      <Button variant="critical">
+      <Button variant="contained" color="critical">
         <span style={{ marginRight: "0.5rem" }}>✕</span>
         삭제
       </Button>

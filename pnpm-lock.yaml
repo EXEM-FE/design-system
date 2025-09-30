@@ -40,6 +40,10 @@ importers:
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.1.0)(lightningcss@1.30.1)
 
   packages/design-token:
+    dependencies:
+      exem-stylesheet:
+        specifier: workspace:*
+        version: link:../stylesheet
     devDependencies:
       tsup:
         specifier: ^8.0.1
@@ -103,9 +107,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      tailwindcss:
-        specifier: '>=3.0.0'
-        version: 4.1.11
+      exem-design-token:
+        specifier: ^0.2.1
+        version: 0.2.1
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.6.6
@@ -3369,6 +3373,9 @@ packages:
   execa@5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
+
+  exem-design-token@0.2.1:
+    resolution: {integrity: sha512-UM4/3RPnCIcljg0/eRhDxzY4ZhmhHxRzMrMft27RR0mKjIVwlhZz69BbkIzjXdt45r0F+VnODytzVDgjRLrJaA==}
 
   expect-type@1.2.2:
     resolution: {integrity: sha512-JhFGDVJ7tmDJItKhYgJCGLOWjuK9vPxiXoUFLwLDc99NlmklilbiQJwoctZtt13+xMw91MCk/REan6MWHqDjyA==}
@@ -9838,6 +9845,8 @@ snapshots:
       onetime: 5.1.2
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
+
+  exem-design-token@0.2.1: {}
 
   expect-type@1.2.2: {}
 
