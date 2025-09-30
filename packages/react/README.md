@@ -1,79 +1,172 @@
-# exem-react
+# @exem/react
 
-> 🚧 **미구현 패키지**: 현재 빈 패키지 상태입니다. React 컴포넌트가 구현되지 않았습니다.
+EXEM Design System의 React 컴포넌트 라이브러리입니다.
 
-EXEM 디자인 시스템의 React 컴포넌트 라이브러리 (개발 예정)
-
-## 현재 상태
-
-- ❌ **설치 불가**: NPM에 배포되지 않음
-- ❌ **컴포넌트 없음**: 모든 컴포넌트가 미구현 상태
-- ❌ **Storybook 없음**: 문서화 미완성
-- 🚧 **개발 예정**: 향후 구현 예정
-
-## 계획된 기능
-
-향후 구현될 예정인 컴포넌트들:
-
-### 기본 컴포넌트 (계획)
-- `Button` - 다양한 스타일의 버튼
-- `Input` - 텍스트 입력 필드
-- `Textarea` - 여러 줄 텍스트 입력
-- `Select` - 드롭다운 선택
-- `Checkbox` - 체크박스
-- `Radio` - 라디오 버튼
-
-### 피드백 컴포넌트 (계획)
-- `Alert` - 알림 메시지
-- `Toast` - 토스트 알림
-- `Tooltip` - 툴팁
-- `Loading` - 로딩 인디케이터
-
-### 레이아웃 컴포넌트 (계획)
-- `Container` - 컨테이너
-- `Grid` - 그리드 시스템
-- `Stack` - 스택 레이아웃
-- `Divider` - 구분선
-
-### 네비게이션 컴포넌트 (계획)
-- `Tab` - 탭 네비게이션
-- `Breadcrumb` - 브레드크럼
-- `Pagination` - 페이지네이션
-
-### 데이터 표시 컴포넌트 (계획)
-- `Table` - 데이터 테이블
-- `Card` - 카드
-- `Badge` - 배지
-- `Avatar` - 아바타
-
-### 오버레이 컴포넌트 (계획)
-- `Modal` - 모달 다이얼로그
-- `Drawer` - 사이드 드로어
-- `Popover` - 팝오버
-
-## 개발 참여
-
-현재 모노레포 워크스페이스에서 개발할 수 있습니다:
+## 📦 설치
 
 ```bash
-# 워크스페이스 설정
-pnpm install
-
-# 패키지 개발 시작
-cd packages/react
-pnpm dev
+pnpm add exem-react exem-design-token
+# or
+npm install exem-react exem-design-token
+# or
+yarn add exem-react exem-design-token
 ```
 
-## 계획된 의존성
+## 🎨 CSS 설정
 
-### Peer Dependencies (예정)
-- React >=19.0.0
-- React DOM >=19.0.0
+**중요**: 컴포넌트를 사용하기 전에 반드시 디자인 토큰 CSS를 import해야 합니다.
 
-### Dependencies (예정)
-- exem-design-token - 디자인 토큰
-- exem-stylesheet - CSS 변수
+### App 최상단에서 import (권장)
 
-## 라이선스
+```tsx
+// App.tsx 또는 main.tsx
+import 'exem-design-token/css'
+import 'exem-react/dist/Button.css' // Button 스타일
+```
+
+## 🚀 사용법
+
+### Button Component
+
+```tsx
+import { Button } from 'exem-react'
+
+function App() {
+  return (
+    <div>
+      {/* 기본 버튼 */}
+      <Button>클릭</Button>
+
+      {/* 색상 & 변형 */}
+      <Button color="primary" variant="contained">Primary</Button>
+      <Button color="accent" variant="outlined">Accent Outlined</Button>
+      <Button color="critical" variant="text">Critical Text</Button>
+
+      {/* 사이즈 */}
+      <Button size="small">Small</Button>
+      <Button size="medium">Medium</Button>
+      <Button size="large">Large</Button>
+      <Button size="xlarge">XLarge</Button>
+
+      {/* 아이콘 */}
+      <Button leftIcon={<IconSearch />}>검색</Button>
+      <Button rightIcon={<IconArrow />}>다음</Button>
+
+      {/* 정렬 */}
+      <Button align="start">Start</Button>
+      <Button align="between">Space Between</Button>
+      
+      {/* 비활성화 */}
+      <Button disabled>Disabled</Button>
+    </div>
+  )
+}
+```
+
+### 레거시 Variant 지원 (하위 호환성)
+
+기존 코드도 그대로 작동합니다:
+
+```tsx
+<Button variant="primary">Primary</Button>      {/* → contained + primary */}
+<Button variant="secondary">Secondary</Button>  {/* → contained + secondary */}
+<Button variant="tertiary">Tertiary</Button>    {/* → outlined + primary */}
+<Button variant="quaternary">Text</Button>       {/* → text + primary */}
+<Button variant="accent">Accent</Button>        {/* → contained + accent */}
+<Button variant="critical">Critical</Button>    {/* → contained + critical */}
+```
+
+## 📖 API Reference
+
+### ButtonProps
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'contained' \| 'outlined' \| 'text'` | `'contained'` | 버튼 스타일 |
+| `color` | `'primary' \| 'secondary' \| 'accent' \| 'critical'` | `'primary'` | 버튼 색상 |
+| `size` | `'small' \| 'medium' \| 'large' \| 'xlarge'` | `'medium'` | 버튼 크기 |
+| `leftIcon` | `React.ReactElement` | - | 왼쪽 아이콘 |
+| `rightIcon` | `React.ReactElement` | - | 오른쪽 아이콘 |
+| `align` | `'start' \| 'end' \| 'between' \| 'around' \| 'center' \| 'startEnd'` | `'center'` | 내부 정렬 |
+| `disabled` | `boolean` | `false` | 비활성화 상태 |
+| `className` | `string` | - | 추가 CSS 클래스 |
+
+### Color & Variant 조합
+
+| Color | Contained | Outlined | Text |
+|-------|-----------|----------|------|
+| primary | ✅ | ✅ | ✅ |
+| secondary | ✅ | ❌ | ❌ |
+| accent | ✅ | ✅ | ✅ |
+| critical | ✅ | ✅ | ✅ |
+
+> **Note**: `secondary` 색상은 `contained` variant만 지원합니다.
+
+## 🎨 CSS 커스터마이징
+
+Button 컴포넌트는 CSS 변수를 사용하므로, `exem-design-token`의 변수를 오버라이드하여 커스터마이징할 수 있습니다:
+
+```css
+:root {
+  /* 색상 오버라이드 */
+  --color-gray-10: #your-color;
+  --color-sky-05: #your-accent-color;
+  
+  /* 둥글기 오버라이드 */
+  --radius-medium: 8px;
+}
+```
+
+## 🔧 유틸리티
+
+### cn 함수
+
+Tailwind CSS 클래스를 병합하는 유틸리티 함수:
+
+```tsx
+import { cn } from 'exem-react'
+
+<Button className={cn('custom-class', condition && 'conditional-class')}>
+  Click
+</Button>
+```
+
+## ⚠️ 트러블슈팅
+
+### CSS가 적용되지 않는 경우
+
+1. **CSS import 확인**
+   ```tsx
+   import 'exem-design-token/css'
+   import 'exem-react/dist/Button.css'
+   ```
+
+2. **CSS 변수 로드 확인**
+   - 브라우저 개발자 도구에서 `--color-gray-10` 같은 변수가 정의되어 있는지 확인
+
+3. **번들러 설정 확인** (Vite)
+   ```ts
+   // vite.config.ts
+   export default defineConfig({
+     optimizeDeps: {
+       include: ['exem-design-token', 'exem-react']
+     }
+   })
+   ```
+
+### TypeScript 에러
+
+```bash
+# 타입 정의가 없다는 에러가 발생하면
+pnpm add -D @types/react @types/react-dom
+```
+
+## 📝 License
 
 MIT
+
+## 🔗 Links
+
+- [Documentation](https://design.exem.io)
+- [GitHub](https://github.com/exem/design-system)
+- [npm](https://www.npmjs.com/package/exem-react)

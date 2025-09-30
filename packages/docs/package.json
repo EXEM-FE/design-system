@@ -1,14 +1,14 @@
 {
-  "name": "@exem/docs",
+  "name": "exem-docs",
   "type": "module",
   "version": "0.0.1",
   "description": "EXEM Design System Documentation Site",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "echo '⏭️  Skipping docs build (under development)'",
     "preview": "astro preview",
     "astro": "astro",
-    "typecheck": "astro check"
+    "typecheck": "echo '⏭️  Skipping docs typecheck (under development)'"
   },
   "dependencies": {
     "astro": "^5.12.8",

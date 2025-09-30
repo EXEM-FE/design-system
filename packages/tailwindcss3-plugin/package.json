@@ -1,45 +1,45 @@
 {
-	"name": "exem-tailwindcss-plugin",
-	"version": "0.1.2",
-	"description": "EXEM Design System - Tailwind CSS 3 Plugin",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
-		}
-	},
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "tsup",
-		"dev": "tsup --watch",
-		"typecheck": "tsc --noEmit"
-	},
-	"keywords": [
-		"tailwindcss",
-		"tailwindcss3",
-		"plugin",
-		"design-system",
-		"exem",
-		"css"
-	],
-	"dependencies": {
-		"exem-stylesheet": "workspace:*",
-		"exem-design-token": "workspace:*"
-	},
-	"devDependencies": {
-		"tailwindcss": "^3.4.0",
-		"tsup": "^8.0.1",
-		"typescript": "^5.3.3"
-	},
-	"peerDependencies": {
-		"tailwindcss": "^3.0.0"
-	},
-	"author": "",
-	"license": "ISC"
+  "name": "exem-tailwindcss-plugin",
+  "version": "0.1.2",
+  "description": "EXEM Design System - Tailwind CSS 3 Plugin",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwindcss3",
+    "plugin",
+    "design-system",
+    "exem",
+    "css"
+  ],
+  "dependencies": {
+    "exem-stylesheet": "workspace:*",
+    "exem-design-token": "workspace:*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  },
+  "author": "",
+  "license": "ISC"
 }

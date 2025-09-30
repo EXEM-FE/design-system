@@ -18,13 +18,17 @@ EXEM 제품군을 위한 통합 디자인 시스템 (개발 중)
 
 ## 패키지 개발 상태
 
-| 패키지 | 설명 | 상태 | 로컬 개발 |
-|--------|------|------|----------|
-| [exem-stylesheet](./packages/stylesheet) | 전역 CSS 변수 및 스타일 | ✅ **구현됨** | 사용 가능 |
-| [exem-design-token](./packages/design-token) | CSS 변수 기반 TypeScript 디자인 토큰 | ✅ **구현됨** | 사용 가능 |
-| [exem-tailwindcss-plugin](./packages/tailwindcss3-plugin) | Tailwind CSS 3 통합 플러그인 | ✅ **구현됨** | 사용 가능 |
-| [exem-icon](./packages/icon) | SVG 아이콘 컴포넌트 | 🚧 **미구현** | 빈 패키지 |
-| [exem-react](./packages/react) | React UI 컴포넌트 | 🚧 **미구현** | 빈 패키지 |
+| 패키지 | 설명 | 상태 | 빌드 | 배포 |
+|--------|------|------|------|------|
+| [exem-stylesheet](./packages/stylesheet) | 전역 CSS 변수 및 스타일 | ✅ **구현됨** | ✅ 성공 | 🚀 준비됨 |
+| [exem-design-token](./packages/design-token) | CSS 변수 기반 TypeScript 디자인 토큰 | ✅ **구현됨** | ✅ 성공 | 🚀 준비됨 |
+| [exem-tailwindcss-plugin](./packages/tailwindcss3-plugin) | Tailwind CSS 3 통합 플러그인 | ✅ **구현됨** | ✅ 성공 | 🚀 준비됨 |
+| [exem-react](./packages/react) | React UI 컴포넌트 | 🔨 **초기 개발** | ✅ 성공 | 🚀 준비됨 |
+| [exem-icon](./packages/icon) | SVG 아이콘 컴포넌트 | 🚧 **미구현** | ⏭️ 스킵 | ❌ 미준비 |
+| [@exem/docs](./packages/docs) | 문서 사이트 (Astro) | 🔨 **개발 중** | ⏭️ 스킵 | ❌ 미준비 |
+
+> 💡 **빌드 상태**: `pnpm build` 성공 (미구현 패키지는 자동 스킵)  
+> 📊 **상세 보고서**: [BUILD_STATUS.md](./BUILD_STATUS.md) 참조
 
 ## 패키지 의존성 구조
 

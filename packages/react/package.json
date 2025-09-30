@@ -1,9 +1,11 @@
 {
   "name": "exem-react",
-  "version": "0.1.1",
+  "version": "0.4.0",
   "description": "EXEM Design System - React Components",
+  "author": "EXEM Design Team",
+  "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -19,18 +21,26 @@
     "react",
     "components",
     "exem",
-    "design-system"
+    "design-system",
+    "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exem/design-system",
+    "directory": "packages/react"
+  },
+  "homepage": "https://design.exem.io",
+  "bugs": {
+    "url": "https://github.com/exem/design-system/issues"
+  },
   "peerDependencies": {
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "exem-design-token": "workspace:*",
-    "exem-icon": "workspace:*"
+    "exem-design-token": "^0.2.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.6",

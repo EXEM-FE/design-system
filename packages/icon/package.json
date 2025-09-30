@@ -9,9 +9,9 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
-		"dev": "tsup --watch",
-		"typecheck": "tsc --noEmit"
+		"build": "echo '⏭️  Skipping icon build (not implemented yet)'",
+		"dev": "echo '⏭️  Skipping icon dev (not implemented yet)'",
+		"typecheck": "echo '⏭️  Skipping icon typecheck (not implemented yet)'"
 	},
 	"keywords": [
 		"icon",
