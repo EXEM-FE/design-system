@@ -319,6 +319,7 @@ const colorTokens = {
   "tint-foreground-cyan": "var(--color-tint-foreground-cyan)",
   "tint-foreground-violet": "var(--color-tint-foreground-violet)",
   "tint-foreground-pink": "var(--color-tint-foreground-pink)",
+  "test-primary": "var(--color-test-primary)",
 } as const
 
 export default colorTokens

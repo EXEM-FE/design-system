@@ -322,6 +322,9 @@
 	--shadow-medium: 0px 0px 20px 0px rgba(3, 7, 18, 0.1);
 	--shadow-strong: 0px 0px 24px 0px rgba(3, 7, 18, 0.1);
 
+	/* Test Color - Pre-commit Hook 테스트용 */
+	--color-test-primary: #8b5cf6;
+
 	/* Breakpoint */
 	--breakpoint-md: 1200px;
 	--breakpoint-lg: 1600px;
