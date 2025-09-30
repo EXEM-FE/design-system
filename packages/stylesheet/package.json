@@ -19,7 +19,8 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
+		"build": "tsup && pnpm build:css",
+		"build:css": "postcss dist/index.css -o dist/index.css",
 		"dev": "tsup --watch",
 		"typecheck": "tsc --noEmit"
 	},
@@ -43,7 +44,11 @@
 		"access": "public"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.4.21",
+		"cssnano": "^7.1.1",
 		"postcss": "^8.4.32",
+		"postcss-cli": "^11.0.1",
+		"postcss-preset-env": "^10.4.0",
 		"tsup": "^8.0.1",
 		"typescript": "^5.3.3"
 	}
