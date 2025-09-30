@@ -15,6 +15,7 @@
 		},
 		"./css": "../stylesheet/dist/index.css"
 	},
+	"sideEffects": false,
 	"files": [
 		"dist"
 	],

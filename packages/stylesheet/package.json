@@ -15,6 +15,7 @@
 		},
 		"./css": "./dist/index.css"
 	},
+	"sideEffects": ["*.css", "dist/index.css"],
 	"files": [
 		"dist"
 	],
