@@ -2,160 +2,116 @@
 
 # EXEM Design System
 
-> 🚧 **실험적 개발 단계**: 현재 모노레포 구조 및 디자인 토큰 시스템을 실험 중입니다.
+> **v1.0 릴리스 완료** | NPM 배포 완료 | 프로덕션 사용 가능
 
-EXEM 제품군을 위한 통합 디자인 시스템 (개발 중)
+EXEM 제품군을 위한 통합 디자인 시스템
 
-## 기술 스택
+## 개요
+
+재사용 가능한 UI 컴포넌트와 디자인 규칙을 하나로 모아, 미리 만들어진 표준 요소들을 조합하여 일관된 사용자 경험을 제공합니다.
+
+### 비즈니스 가치
+
+| 항목 | 기대 효과 |
+|------|-----------|
+| **개발 효율성** | 개발 시간 30-50% 단축, 유지보수 비용 절감 |
+| **브랜드 일관성** | 모든 제품에서 통일된 UI/UX |
+| **품질 향상** | 검증된 컴포넌트로 버그 감소, 안정성 보장 |
+| **협업 개선** | 디자이너-개발자 간 공통 언어, 온보딩 시간 단축 |
+
+**적용 대상**: MaxGauge, InterMax 등 EXEM 제품군
+
+## 현재 상태 (2025년 10월)
+
+**v1.0 릴리스 완료**
+- NPM 배포: Design Token, Stylesheet, React Components, Tailwind Plugin
+- 자동화 인프라 구축 (CI/CD, 품질 검증)
+- 개발자 문서 완료
+
+## 구성 요소
+
+### 배포 완료 (NPM)
+
+- **@exem-fe/design-token**: 색상, 크기, 간격 등 디자인 규칙
+- **@exem-fe/stylesheet**: 전역 CSS 스타일 및 변수
+- **@exem-fe/react**: UI 컴포넌트
+- **@exem-fe/tailwindcss-plugin**: Tailwind CSS 통합
+
+### 개발 예정
+
+Icon System, Input, Select, Modal 등 추가 컴포넌트 (2026년)
+
+## 로드맵
+
+### 2025년 (완료)
+
+| 분기 | 주요 목표 |
+|------|-----------|
+| Q1 | 디자인 토큰 시스템 설계, 빅테크 레퍼런스 조사 |
+| Q2 | 컴포넌트 아키텍처 구성, 모노레포 인프라 구축 |
+| Q3 | 컴포넌트 개발, 자동화 파이프라인 구축 |
+| Q4 | **v1.0 릴리스 및 NPM 배포** |
+
+### 2026년 (계획)
+
+| 분기 | 주요 목표 |
+|------|-----------|
+| Q1 | 컴포넌트 추가, NPM 안정화 |
+| Q2 | EXEM 제품 적용 |
+| Q3 | 프로세스 자동화, AI 기반 개발 도구 (MCP) |
+| Q4 | 시스템 안정화, 피드백 반영 |
+
+### 장기 전략
+
+**조건부 확장** (실제 필요성 검증 후 도입)
+- 멀티 브랜드 시스템 (제품별 테마)
+- 다중 프레임워크 지원 (Vue, Svelte)
+- Figma 연동 자동화
+
+**핵심 원칙**
+- 품질 우선 (완성도 높은 소수 컴포넌트)
+- 검증된 기술 활용 (Radix UI)
+- 실사용 기반 확장
+
+---
+
+## 개발자 정보
+
+<details>
+<summary><b>기술 스택 및 도구</b></summary>
 
 ### 핵심 기술
 - **모노레포**: pnpm workspace
-- **빌드**: tsup
-- **언어**: TypeScript
+- **빌드**: tsup (고성능 TypeScript 빌더)
+- **언어**: TypeScript (타입 안정성)
 - **스타일**: CSS + PostCSS
-- **버전 관리**: Changesets
-- **테스트**: Vitest
+- **버전 관리**: Changesets (자동 버전 관리)
 
 ### 코드 품질 & 자동화
-- **린팅/포맷팅**: Biome (ESLint + Prettier 대체)
+- **린팅/포맷팅**: Biome (ESLint + Prettier 대체, 10배 빠름)
 - **타입 체크**: TypeScript strict mode
 - **커밋 검증**: Commitlint + Conventional Commits
-- **Pre-commit Hook**: Husky (자동 포맷팅, 린팅, 타입 체크)
-- **CI/CD**: GitHub Actions (품질 검사, 자동 릴리스) 
+- **CI/CD**: GitHub Actions (품질 검사, 자동 릴리스)
 
-## 패키지 개발 상태
+</details>
 
-| 패키지 | 설명 | 상태 | v1.0 목표 | 배포 계획 |
-|--------|------|------|-----------|-----------|
-| [exem-stylesheet](./packages/stylesheet) | 전역 CSS 변수 및 스타일 | ✅ **완성** | ✅ 포함 | v1.0.0 |
-| [exem-design-token](./packages/design-token) | CSS 변수 기반 TypeScript 디자인 토큰 | ✅ **완성** | ✅ 포함 | v1.0.0 |
-| [exem-tailwindcss-plugin](./packages/tailwindcss3-plugin) | Tailwind CSS 3 통합 플러그인 | ✅ **완성** | ✅ 포함 | v1.0.0 |
-| [exem-react](./packages/react) | React UI 컴포넌트 (Button only) | 🔨 **개발 중** | ✅ 포함 | v1.0.0 |
-| [exem-icon](./packages/icon) | SVG 아이콘 컴포넌트 | 🚧 **미구현** | ⏭️ v1.x | v1.1.0+ |
-| [@exem/docs](./packages/docs) | 문서 사이트 (Astro) | 🔨 **개발 중** | ✅ 포함 | v1.0.0 |
-
-> 💡 **v1.0 릴리스 기준**: Button 컴포넌트 완성 + 전체 모노레포 인프라 안정화  
-> 📊 **코드 품질**: Biome 린팅 + TypeScript strict mode + 테스트 커버리지  
-> 🔒 **커밋 규칙**: Conventional Commits + Husky pre-commit hooks  
-> 🎯 **전략**: Radix UI 기반 headless 패턴 활용 (자체 구현 X)
-
-### 🎯 개발 로드맵
-
-#### 🚧 v1.0 릴리스 목표 (GitHub 공개 전)
-
-**필수 완료 항목:**
-1. **✅ Button 컴포넌트 완성**
-   - Radix UI 기반 구현
-   - 모든 variant, size, state 완성
-   - 접근성(a11y) 검증 완료
-   - Storybook 문서화
-
-2. **✅ 모노레포 인프라 완성**
-   - 모든 패키지 빌드 성공
-   - CI/CD 파이프라인 안정화
-   - 버전 관리 시스템 (Changesets)
-   - 커밋 규칙 자동화 (Commitlint + Husky)
-
-3. **✅ 문서화**
-   - README 완성 (설치, 사용법, 기여 가이드)
-   - 패키지별 README
-   - 라이선스 및 기여자 정보
-
-4. **✅ 코드 품질**
-   - TypeScript strict mode 통과
-   - Biome 린팅 규칙 준수
-   - 테스트 커버리지 확보
-
-**v1.0 릴리스 시점:**
-- 위 4가지 항목 모두 완료
-- 1-2주 내부 테스트 완료
-- GitHub 공개 및 첫 NPM 배포
-
-#### 📦 v1.x - GitHub 공개 후 (점진적 확장)
-
-**우선순위 높음:**
-5. **Input 컴포넌트**
-   - Radix UI 기반
-   - TextField, TextArea, Number 등
-
-6. **Select 컴포넌트**
-   - Radix Select 기반
-   - 단일/다중 선택
-
-7. **Modal/Dialog 컴포넌트**
-   - Radix Dialog 기반
-   - Alert, Confirm 변형
-
-**우선순위 중간:**
-8. **Form 관련**
-   - Checkbox, Radio, Switch (Radix 기반)
-   - Form validation 통합
-
-9. **피드백 컴포넌트**
-   - Toast, Alert, Badge
-
-10. **Icon 시스템**
-    - SVG 아이콘 패키지
-    - EXEM 제품군 공통 아이콘
-
-#### 🔮 v2.x - 생태계 확장
-
-**조건부 도입:**
-11. **멀티 테마 시스템** (3개 이상 제품에서 필요 시)
-    ```
-    packages/preset-maxgauge/
-    packages/preset-intermax/
-    ```
-
-12. **Ecosystem 패키지** (제품별 특화 요구사항 발생 시)
-    ```
-    packages/ecosystem/maxgauge/
-    packages/ecosystem/intermax/
-    ```
-
-13. **프레임워크 확장** (수요 검증 후)
-    - Vue, Svelte 지원
-    - Next.js, Remix 최적화
-
-### 💡 핵심 전략
-
-**현재 집중 (v1.0까지):**
-1. ✅ **Button 하나를 완벽하게** - 품질 기준 확립
-2. ✅ **Radix UI 활용** - Headless UI는 직접 만들지 않음
-3. ✅ **모노레포 안정화** - 빌드, CI/CD, 버전 관리
-
-**v1.0 이후 (GitHub 공개 후):**
-- 커뮤니티 피드백 수집
-- 컴포넌트 점진적 추가 (Input → Select → Modal 순)
-- 실제 EXEM 제품에 적용하며 검증
-
-**장기적으로 고려:**
-- 멀티 브랜드 시스템 (실제 필요 시)
-- Figma 자동화 (디자인 팀 규모 커질 때)
-- 다른 프레임워크 지원 (수요 발생 시)
-
-**핵심 원칙:**
-- ✅ 품질 > 속도 (하나를 제대로)
-- ✅ Radix UI 재사용 (바퀴 재발명 금지)
-- ✅ 점진적 확장 (필요할 때만 추가)
-- ✅ 실제 사용 기반 검증 (추측 금지)
-
-## 패키지 의존성 구조
+<details>
+<summary><b>패키지 의존성 구조</b></summary>
 
 ```mermaid
 graph TD
     %% 소스
-    CSS["📄 exem-stylesheet<br/>전역 CSS 변수"]
+    CSS["📄 @exem-fe/stylesheet<br/>전역 CSS 변수"]
     
     %% 토큰 생성
-    TOKEN["📦 exem-design-token<br/>TypeScript 토큰<br/>- colorTokens<br/>- radiusTokens<br/>- shadowTokens<br/>- breakpointTokens"]
+    TOKEN["📦 @exem-fe/design-token<br/>TypeScript 토큰<br/>- colorTokens<br/>- radiusTokens<br/>- shadowTokens<br/>- breakpointTokens"]
     
     %% 통합 패키지들
-    TW["🎨 exem-tailwindcss-plugin<br/>Tailwind CSS 3 통합<br/>- 테마 확장<br/>- 동적 그라데이션"]
+    TW["🎨 @exem-fe/tailwindcss-plugin<br/>Tailwind CSS 3 통합<br/>- 테마 확장<br/>- 동적 그라데이션"]
     
-    REACT["⚛️ exem-react<br/>React 컴포넌트<br/>- Button, Card 등"]
+    REACT["⚛️ @exem-fe/react<br/>React 컴포넌트<br/>- Button 등"]
     
-    ICON["🎯 exem-icon<br/>아이콘 시스템<br/>(미구현)"]
+    ICON["🎯 @exem-fe/icon<br/>아이콘 시스템<br/>(미구현)"]
     
     %% 최종 애플리케이션
     APP["🚀 사용자 애플리케이션<br/>Next.js / React / Tailwind"]
@@ -189,43 +145,50 @@ graph TD
 - **점선**: 간접 의존성 (CSS 변수 자동 로드)
 
 #### 핵심 의존성 체인
-1. `exem-stylesheet` → `exem-design-token` → 다른 모든 패키지
+1. `@exem-fe/stylesheet` → `@exem-fe/design-token` → 다른 모든 패키지
 2. 모든 패키지는 궁극적으로 CSS 변수를 기반으로 동작
 3. 토큰 변경 시 자동으로 모든 패키지에 반영
 
-## 🚧 v1.0 릴리스 체크리스트
+</details>
 
-### ✅ 완료된 것
-- [x] 모노레포 구조 (pnpm workspace)
-- [x] 빌드 시스템 (tsup)
-- [x] 디자인 토큰 시스템 (CSS 변수 → TypeScript)
-- [x] Tailwind CSS 플러그인
-- [x] CI/CD 파이프라인 (GitHub Actions)
-- [x] 코드 품질 도구 (Biome, TypeScript strict)
-- [x] 커밋 규칙 자동화 (Commitlint + Husky)
-- [x] 버전 관리 (Changesets)
+<details>
+<summary><b>설치 및 사용법</b></summary>
 
-### 🔨 진행 중 (v1.0 전 완료 필요)
-- [ ] **Button 컴포넌트** - Radix UI 기반, 모든 variant/size 완성
-- [ ] **Storybook 문서화** - Button 컴포넌트 스토리 완성
-- [ ] **테스트** - Button 컴포넌트 단위 테스트
-- [ ] **문서 사이트** - 설치 가이드, API 레퍼런스
-- [ ] **패키지 README** - 각 패키지별 사용법 문서화
-- [ ] **내부 테스트** - 실제 EXEM 프로젝트에 적용 검증
+### NPM 설치
 
-### 🎯 v1.0 릴리스 후
-- [ ] **GitHub 공개** - 저장소 public 전환
-- [ ] **NPM 배포** - @exem/* 패키지 퍼블리시
-- [ ] **커뮤니티** - 이슈/PR 템플릿, CONTRIBUTING.md
-- [ ] **Input 컴포넌트** - v1.1.0 목표
-- [ ] **Select 컴포넌트** - v1.2.0 목표
-- [ ] **Modal 컴포넌트** - v1.3.0 목표
+```bash
+# 디자인 토큰
+pnpm add @exem-fe/design-token
 
-## 로컬 개발 시작
+# React 컴포넌트
+pnpm add @exem-fe/react @exem-fe/design-token
+
+# Tailwind 플러그인
+pnpm add -D @exem-fe/tailwindcss-plugin
+```
+
+### 사용 예제
+
+```tsx
+// React
+import { Button } from '@exem-fe/react'
+import '@exem-fe/design-token/css'
+
+function App() {
+  return <Button color="primary">클릭</Button>
+}
+```
+
+</details>
+
+<details>
+<summary><b>로컬 개발 환경 설정</b></summary>
+
+## 개발 시작
 
 ```bash
 # 저장소 클론
-git clone <repository-url>
+git clone https://github.com/EXEM-FE/design-system.git
 cd exem-design
 
 # 의존성 설치
@@ -238,15 +201,19 @@ pnpm dev
 cd packages/design-token && pnpm generate
 ```
 
-### 💡 개발 팁
+### 개발 팁
 
-- **CSS 변수 수정**: `packages/stylesheet/src/global.css` 편집
-- **토큰 자동 생성**: CSS 변경 시 pre-commit hook이 자동으로 토큰 재생성
-- **커밋 메시지**: `type(scope): subject` 형식 준수 (자동 검증)
-- **코드 품질**: 커밋 전 자동으로 포맷팅, 린팅, 타입 체크 실행
-- **실제 사용**: 현재 워크스페이스 내에서만 가능 (NPM 미배포 상태)
+- **CSS 변수 수정**: `packages/stylesheet/src/global.css`
+- **자동 토큰 생성**: CSS 변경 시 자동 생성
+- **커밋 메시지**: `type(scope): subject` 형식
+- **자동 품질 검사**: 커밋 전 자동 실행
 
-## 🚀 시작하기 - 전체 프로세스 (A to Z)
+</details>
+
+<details>
+<summary><b>전체 개발 프로세스 (A to Z)</b></summary>
+
+## 전체 프로세스
 
 ### A. 프로젝트 초기 설정
 
@@ -374,19 +341,16 @@ pnpm release
 ### I. 문제 해결
 
 ```bash
-# 캐시 정리
-pnpm clean           # 빌드 결과물 삭제
-rm -rf node_modules  # node_modules 삭제
-pnpm install         # 재설치
-
-# 빌드 강제 재실행
+pnpm clean && pnpm install
 pnpm build --force
-
-# 특정 패키지만 빌드
-cd packages/react && pnpm build
 ```
 
-## 명령어 레퍼런스
+</details>
+
+<details>
+<summary><b>명령어 레퍼런스</b></summary>
+
+## 명령어
 
 ```bash
 # 개발
@@ -407,9 +371,12 @@ pnpm version       # 버전 업데이트 및 CHANGELOG 자동 생성
 pnpm release       # 빌드 후 NPM 자동 배포
 ```
 
-## 🛠️ 개발 환경 구성
+</details>
 
-### Biome - 통합 린팅/포맷팅
+<details>
+<summary><b>코드 품질 도구</b></summary>
+
+### Biome
 
 - **ESLint + Prettier 대체**: 단일 도구로 통합
 - **성능**: Rust 기반으로 10-20배 빠른 속도
@@ -480,3 +447,19 @@ chore(deps): update dependencies
 - 📦 NPM 자동 배포
 - 📝 CHANGELOG 자동 생성
 - 🏷️ Git 태그 자동 생성
+
+</details>
+
+---
+
+## 문의
+
+- GitHub: https://github.com/EXEM-FE/design-system
+- Issues: https://github.com/EXEM-FE/design-system/issues
+- NPM: [@exem-fe](https://www.npmjs.com/org/exem-fe)
+
+## 라이선스
+
+Apache License 2.0
+
+Copyright 2025 EXEM Corporation

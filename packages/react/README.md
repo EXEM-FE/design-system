@@ -161,11 +161,11 @@ import { cn } from '@exem-fe/react'
 pnpm add -D @types/react @types/react-dom
 ```
 
-## 📝 License
+## 라이선스
 
-MIT
+Apache License 2.0
 
-## 🔗 Links
+## 링크
 
 - [GitHub](https://github.com/EXEM-FE/design-system)
 - [npm](https://www.npmjs.com/package/@exem-fe/react)

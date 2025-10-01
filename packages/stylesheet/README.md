@@ -1,4 +1,7 @@
-# exem-stylesheet
+# @exem-fe/stylesheet
+
+[![npm version](https://img.shields.io/npm/v/@exem-fe/stylesheet)](https://www.npmjs.com/package/@exem-fe/stylesheet)
+[![npm downloads](https://img.shields.io/npm/dm/@exem-fe/stylesheet)](https://www.npmjs.com/package/@exem-fe/stylesheet)
 
 EXEM 디자인 시스템의 CSS 변수와 전역 스타일을 제공하는 패키지입니다.
 
@@ -14,39 +17,48 @@ EXEM 디자인 시스템의 모든 CSS 변수(color, radius, shadow, breakpoint)
 - **크기 토큰**: 반경, 그림자 효과, 브레이크포인트
 - **즉시 사용 가능**: CSS 변수로 바로 활용 가능
 
-## 현재 상태
+## 설치
 
-- ✅ **구현됨**: CSS 변수 정의 완료
-- ❌ **NPM 미배포**: 로컬 워크스페이스에서만 사용 가능
-- ✅ **워크스페이스 사용 가능**: 모노레포 내에서 개발 가능
+```bash
+pnpm add @exem-fe/stylesheet
+# or
+npm install @exem-fe/stylesheet
+# or
+yarn add @exem-fe/stylesheet
+```
 
-## 로컬 개발 사용법
+## 사용법
 
-### 워크스페이스에서 import
+### React / JavaScript에서 import
 
 ```typescript
-// 모노레포 워크스페이스에서만 가능
-import 'exem-stylesheet'
+// 앱 최상단에서 CSS import (App.tsx, main.tsx 등)
+import '@exem-fe/stylesheet'
 
-// 또는 직접 경로로 CSS 파일 임포트
-import 'exem-stylesheet/src/global.css'
+// 이제 모든 CSS 변수를 사용할 수 있습니다
 ```
 
-### CSS에서 워크스페이스 import
+### CSS 파일에서 import
 
 ```css
-/* 워크스페이스 내에서만 가능 */
-@import 'exem-stylesheet/src/global.css';
+/* styles.css */
+@import '@exem-fe/stylesheet';
+
+.my-component {
+  color: var(--color-text-primary);
+  background: var(--color-elevation-elevation-0);
+}
 ```
 
-### 빌드된 CSS 파일 직접 사용
+### HTML에서 직접 사용
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- 워크스페이스 빌드 결과물 사용 -->
-  <link rel="stylesheet" href="./packages/stylesheet/dist/index.css">
+  <style>
+    @import url('https://unpkg.com/@exem-fe/stylesheet/dist/index.css');
+  </style>
 </head>
 <body>
   <div style="color: var(--color-text-primary); background: var(--color-elevation-elevation-0);">
@@ -197,8 +209,28 @@ stylesheet/
 
 ## 관련 패키지
 
-- `exem-design-token` - 이 패키지를 기반으로 TypeScript 토큰 생성
+- [`@exem-fe/design-token`](https://www.npmjs.com/package/@exem-fe/design-token) - 이 패키지를 기반으로 TypeScript 토큰 생성
+- [`@exem-fe/tailwindcss-plugin`](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin) - Tailwind CSS 통합
+- [`@exem-fe/react`](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트 라이브러리
+
+## 개발 (모노레포 기여자용)
+
+```bash
+# 개발 모드 실행
+pnpm dev
+
+# 빌드
+pnpm build
+
+# 타입 체크
+pnpm typecheck
+```
 
 ## 라이선스
 
-MIT
+Apache License 2.0
+
+## 링크
+
+- [GitHub Repository](https://github.com/EXEM-FE/design-system)
+- [NPM Package](https://www.npmjs.com/package/@exem-fe/stylesheet)

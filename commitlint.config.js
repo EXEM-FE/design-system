@@ -32,6 +32,7 @@ export default {
         "ci",
         "build",
         "root",
+        "all",
       ],
     ],
     "scope-empty": [2, "never"],

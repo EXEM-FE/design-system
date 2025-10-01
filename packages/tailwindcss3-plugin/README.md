@@ -1,10 +1,13 @@
-# exem-tailwindcss-plugin
+# @exem-fe/tailwindcss-plugin
+
+[![npm version](https://img.shields.io/npm/v/@exem-fe/tailwindcss-plugin)](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin)
+[![npm downloads](https://img.shields.io/npm/dm/@exem-fe/tailwindcss-plugin)](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin)
 
 EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 고급 플러그인입니다.
 
 ## 개요
 
-`exem-design-token`의 토큰들을 기반으로 Tailwind CSS 유틸리티 클래스와 컴포넌트를 자동 생성하는 플러그인입니다. EXEM 디자인 시스템을 Tailwind 프로젝트에서 완전히 활용할 수 있습니다.
+`@exem-fe/design-token`의 토큰들을 기반으로 Tailwind CSS 유틸리티 클래스와 컴포넌트를 자동 생성하는 플러그인입니다. EXEM 디자인 시스템을 Tailwind 프로젝트에서 완전히 활용할 수 있습니다.
 
 ## 주요 기능
 
@@ -12,41 +15,43 @@ EXEM 디자인 시스템을 Tailwind CSS 3에서 사용할 수 있도록 하는 
 - **동적 그라데이션**: `matchUtilities`를 활용한 방향 지정 가능한 EXEM 로고 그라데이션
 - **타이포그래피 스케일**: fontSize에 header-1 ~ caption까지의 디자인 시스템 스케일 제공
 - **폰트 웨이트**: regular, medium, semibold, bold의 일관된 폰트 두께
-- **CSS 변수 자동 로드**: exem-stylesheet 자동 import
+- **CSS 변수 자동 로드**: CSS 변수 기반 동작
 
-## 현재 상태
+## 설치
 
-- ✅ **구현됨**: Tailwind CSS 플러그인 완료
-- ❌ **NPM 미배포**: 로컬 워크스페이스에서만 사용 가능
-- ✅ **워크스페이스 사용 가능**: 모노레포 내에서 개발 가능
-- ✅ **동적 그라데이션**: matchUtilities 기반 고급 기능 포함
+```bash
+# 플러그인 설치
+pnpm add -D @exem-fe/tailwindcss-plugin
 
-## 로컬 개발 사용법
+# CSS 변수 패키지도 함께 설치 (필수)
+pnpm add @exem-fe/stylesheet
+```
 
-### 워크스페이스에서 Tailwind 설정
+## 사용법
 
-`tailwind.config.js`에 워크스페이스 패키지를 추가하세요:
+### Tailwind 설정
+
+`tailwind.config.js`에 플러그인을 추가하세요:
 
 ```javascript
-// 모노레포 워크스페이스에서만 가능
 module.exports = {
   content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
   plugins: [
-    require('./packages/tailwindcss3-plugin'), // 워크스페이스 로컬 경로
+    require('@exem-fe/tailwindcss-plugin'),
   ],
 }
 ```
 
 ### 프로젝트에 CSS 변수 로드
 
-먼저 워크스페이스의 stylesheet를 import해야 합니다:
+앱 최상단에서 CSS를 import해야 합니다:
 
 ```typescript
-// 워크스페이스에서 CSS 변수 로드 (필수)
-import 'exem-stylesheet'
+// App.tsx, main.tsx 등에서
+import '@exem-fe/stylesheet'
 ```
 
 ### HTML/JSX에서 사용
@@ -185,26 +190,39 @@ pnpm typecheck
 - **`matchUtilities`**: 동적 값을 받는 유틸리티 (그라데이션 방향 등)
 - **Theme 확장**: 기존 Tailwind 테마에 EXEM 토큰 통합
 
+## 관련 패키지
+
+- [`@exem-fe/stylesheet`](https://www.npmjs.com/package/@exem-fe/stylesheet) - CSS 변수 정의 (필수)
+- [`@exem-fe/design-token`](https://www.npmjs.com/package/@exem-fe/design-token) - TypeScript 토큰
+- [`@exem-fe/react`](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트
+
+## 개발 (모노레포 기여자용)
+
+```bash
+# 개발 모드
+pnpm dev
+
+# 빌드
+pnpm build
+
+# 타입 체크
+pnpm typecheck
+```
+
 ## 의존성
 
 ### Dependencies
-- `exem-stylesheet` - CSS 변수 소스
-- `exem-design-token` - TypeScript 토큰 정의
+- `@exem-fe/stylesheet` - CSS 변수 소스
+- `@exem-fe/design-token` - TypeScript 토큰 정의
 
 ### PeerDependencies
 - `tailwindcss` ^3.0.0
 
-### DevDependencies
-- `tailwindcss` - 플러그인 개발용
-- `tsup` - 빌드 도구
-- `typescript` - 타입스크립트 컴파일러
-
-## 관련 패키지
-
-- `exem-stylesheet` - CSS 변수 정의
-- `exem-design-token` - TypeScript 토큰
-- `exem-react` - React 컴포넌트
-
 ## 라이선스
 
-MIT
+Apache License 2.0
+
+## 링크
+
+- [GitHub Repository](https://github.com/EXEM-FE/design-system)
+- [NPM Package](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin)

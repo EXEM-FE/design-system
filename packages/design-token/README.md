@@ -1,4 +1,7 @@
-# exem-design-token
+# @exem-fe/design-token
+
+[![npm version](https://img.shields.io/npm/v/@exem-fe/design-token)](https://www.npmjs.com/package/@exem-fe/design-token)
+[![npm downloads](https://img.shields.io/npm/dm/@exem-fe/design-token)](https://www.npmjs.com/package/@exem-fe/design-token)
 
 EXEM 디자인 시스템의 디자인 토큰을 TypeScript에서 활용할 수 있는 패키지입니다.
 
@@ -14,22 +17,25 @@ CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-J
 - **카테고리별 분류**: color, radius, shadow, breakpoint별 토큰 파일
 - **독립적 사용**: CSS 스타일시트 없이도 토큰만 사용 가능
 
-## 현재 상태
+## 설치
 
-- ✅ **구현됨**: TypeScript 토큰 생성 완료
-- ✅ **워크스페이스 사용 가능**: 모노레포 내에서 개발 가능
-- ✅ **토큰 자동 생성**: CSS 변수에서 TypeScript 토큰 추출 기능
+```bash
+pnpm add @exem-fe/design-token
+# or
+npm install @exem-fe/design-token
+# or
+yarn add @exem-fe/design-token
+```
 
-## 로컬 개발 사용법
+## 사용법
 
-### 워크스페이스에서 토큰 import
+### 기본 사용
 
 ```typescript
-// 모노레포 워크스페이스에서만 가능
 // 방법 1: 개별 토큰 직접 import (권장)
-import { color, radius, shadow, breakpoint } from 'exem-design-token'
+import { color, radius, shadow, breakpoint } from '@exem-fe/design-token'
 
-// CSS-in-JS에서 사용 (워크스페이스 내에서만)
+// CSS-in-JS에서 사용
 const Button = styled.button`
   background-color: ${color['surface-accent-default']};
   color: ${color['text-inverse']};
@@ -38,7 +44,7 @@ const Button = styled.button`
 `
 
 // 방법 2: tokens 객체를 통한 import
-import { tokens } from 'exem-design-token'
+import { tokens } from '@exem-fe/design-token'
 
 const buttonStyle = {
   backgroundColor: tokens.color['surface-accent-default'], // var(--color-surface-accent-default)
@@ -47,14 +53,16 @@ const buttonStyle = {
 }
 ```
 
-### CSS 스타일시트 사용 (워크스페이스)
+### CSS 스타일시트 로드
 
-CSS 변수를 실제로 사용하려면 워크스페이스 내 stylesheet 패키지를 함께 사용하세요:
+CSS 변수를 실제로 사용하려면 스타일시트를 함께 import하세요:
 
 ```typescript
-// 워크스페이스에서 CSS 변수 로드
-import 'exem-stylesheet'
-import { tokens } from 'exem-design-token'
+// 앱 최상단에서 CSS 로드 (App.tsx, main.tsx 등)
+import '@exem-fe/design-token/css'
+import { tokens } from '@exem-fe/design-token'
+
+// 이제 var(--color-*) 변수들이 활성화됩니다
 ```
 
 ## 토큰 구조
@@ -148,9 +156,28 @@ design-token/
 
 ## 관련 패키지
 
-- `exem-stylesheet` - CSS 변수 정의 소스
-- `exem-tailwindcss-plugin` - Tailwind CSS 플러그인에서 토큰 활용
+- [`@exem-fe/stylesheet`](https://www.npmjs.com/package/@exem-fe/stylesheet) - CSS 변수 정의 소스
+- [`@exem-fe/tailwindcss-plugin`](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin) - Tailwind CSS 플러그인에서 토큰 활용
+- [`@exem-fe/react`](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트 라이브러리
+
+## 개발 (모노레포 기여자용)
+
+```bash
+# 토큰 재생성
+pnpm generate
+
+# 빌드
+pnpm build
+
+# 타입 체크
+pnpm typecheck
+```
 
 ## 라이선스
 
-MIT
+Apache License 2.0
+
+## 링크
+
+- [GitHub Repository](https://github.com/EXEM-FE/design-system)
+- [NPM Package](https://www.npmjs.com/package/@exem-fe/design-token)

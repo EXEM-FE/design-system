@@ -53,9 +53,23 @@
   },
   "files": {
     "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+    "experimentalScannerIgnores": [
+      "**/dist/**",
+      "**/build/**",
+      "**/node_modules/**",
+      "**/.astro/**",
+      "**/.changeset/**",
+      "**/.husky/**"
+    ],
     "ignoreUnknown": true
   },
   "overrides": [
+    {
+      "includes": ["**/dist/**", "**/build/**", "**/.astro/**"],
+      "linter": {
+        "enabled": false
+      }
+    },
     {
       "includes": [
         "**/*.test.ts",
