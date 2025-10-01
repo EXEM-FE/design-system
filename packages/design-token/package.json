@@ -1,6 +1,6 @@
 {
 	"name": "@exem-fe/design-token",
-	"version": "0.2.1",
+	"version": "1.0.0",
 	"description": "EXEM Design System - Design Tokens",
 	"author": "EXEM Design Team",
 	"license": "Apache-2.0",
@@ -46,9 +46,9 @@
 	"dependencies": {
 		"@exem-fe/stylesheet": "workspace:*"
 	},
-  "devDependencies": {
-    "tsx": "^4.0.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
-  }
+	"devDependencies": {
+		"tsx": "^4.0.0",
+		"tsup": "^8.0.1",
+		"typescript": "^5.3.3"
+	}
 }
