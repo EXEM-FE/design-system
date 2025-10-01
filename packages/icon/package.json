@@ -1,5 +1,5 @@
 {
-	"name": "exem-icon",
+	"name": "@exem-fe/icon",
 	"version": "0.1.0",
 	"description": "EXEM Design System - Icon Library",
 	"main": "dist/index.js",

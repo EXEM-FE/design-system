@@ -1,51 +1,51 @@
 {
-  "name": "exem-design-token",
-  "version": "0.2.1",
-  "description": "EXEM Design System - Design Tokens",
-  "author": "EXEM Design Team",
-  "license": "Apache-2.0",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./css": "../stylesheet/dist/index.css"
-  },
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "generate": "tsx src/generateToken.ts"
-  },
-  "keywords": [
-    "design-token",
-    "exem",
-    "design-system",
-    "typescript"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/exem/design-system",
-    "directory": "packages/design-token"
-  },
-  "homepage": "https://design.exem.io",
-  "bugs": {
-    "url": "https://github.com/exem/design-system/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "exem-stylesheet": "^0.2.0"
-  },
+	"name": "@exem-fe/design-token",
+	"version": "0.2.1",
+	"description": "EXEM Design System - Design Tokens",
+	"author": "EXEM Design Team",
+	"license": "Apache-2.0",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./css": "../stylesheet/dist/index.css"
+	},
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"typecheck": "tsc --noEmit",
+		"generate": "tsx src/generateToken.ts"
+	},
+	"keywords": [
+		"design-token",
+		"exem",
+		"design-system",
+		"typescript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EXEM-FE/design-system",
+		"directory": "packages/design-token"
+	},
+	"homepage": "https://github.com/EXEM-FE/design-system",
+	"bugs": {
+		"url": "https://github.com/EXEM-FE/design-system/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@exem-fe/stylesheet": "workspace:*"
+	},
   "devDependencies": {
     "tsx": "^4.0.0",
     "tsup": "^8.0.1",

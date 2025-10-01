@@ -1,15 +1,15 @@
-# @exem/react
+# @exem-fe/react
 
 EXEM Design System의 React 컴포넌트 라이브러리입니다.
 
 ## 📦 설치
 
 ```bash
-pnpm add exem-react exem-design-token
+pnpm add @exem-fe/react @exem-fe/design-token
 # or
-npm install exem-react exem-design-token
+npm install @exem-fe/react @exem-fe/design-token
 # or
-yarn add exem-react exem-design-token
+yarn add @exem-fe/react @exem-fe/design-token
 ```
 
 ## 🎨 CSS 설정
@@ -20,8 +20,8 @@ yarn add exem-react exem-design-token
 
 ```tsx
 // App.tsx 또는 main.tsx
-import 'exem-design-token/css'
-import 'exem-react/dist/Button.css' // Button 스타일
+import '@exem-fe/design-token/css'
+import '@exem-fe/react/dist/Button.css' // Button 스타일
 ```
 
 ## 🚀 사용법
@@ -29,7 +29,7 @@ import 'exem-react/dist/Button.css' // Button 스타일
 ### Button Component
 
 ```tsx
-import { Button } from 'exem-react'
+import { Button } from '@exem-fe/react'
 
 function App() {
   return (
@@ -104,7 +104,7 @@ function App() {
 
 ## 🎨 CSS 커스터마이징
 
-Button 컴포넌트는 CSS 변수를 사용하므로, `exem-design-token`의 변수를 오버라이드하여 커스터마이징할 수 있습니다:
+Button 컴포넌트는 CSS 변수를 사용하므로, `@exem-fe/design-token`의 변수를 오버라이드하여 커스터마이징할 수 있습니다:
 
 ```css
 :root {
@@ -124,7 +124,7 @@ Button 컴포넌트는 CSS 변수를 사용하므로, `exem-design-token`의 변
 Tailwind CSS 클래스를 병합하는 유틸리티 함수:
 
 ```tsx
-import { cn } from 'exem-react'
+import { cn } from '@exem-fe/react'
 
 <Button className={cn('custom-class', condition && 'conditional-class')}>
   Click
@@ -137,8 +137,8 @@ import { cn } from 'exem-react'
 
 1. **CSS import 확인**
    ```tsx
-   import 'exem-design-token/css'
-   import 'exem-react/dist/Button.css'
+   import '@exem-fe/design-token/css'
+   import '@exem-fe/react/dist/Button.css'
    ```
 
 2. **CSS 변수 로드 확인**
@@ -149,7 +149,7 @@ import { cn } from 'exem-react'
    // vite.config.ts
    export default defineConfig({
      optimizeDeps: {
-       include: ['exem-design-token', 'exem-react']
+       include: ['@exem-fe/design-token', '@exem-fe/react']
      }
    })
    ```
@@ -167,6 +167,5 @@ MIT
 
 ## 🔗 Links
 
-- [Documentation](https://design.exem.io)
-- [GitHub](https://github.com/exem/design-system)
-- [npm](https://www.npmjs.com/package/exem-react)
+- [GitHub](https://github.com/EXEM-FE/design-system)
+- [npm](https://www.npmjs.com/package/@exem-fe/react)

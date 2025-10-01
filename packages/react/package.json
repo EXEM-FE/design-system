@@ -1,5 +1,5 @@
 {
-  "name": "exem-react",
+  "name": "@exem-fe/react",
   "version": "0.4.0",
   "description": "EXEM Design System - React Components",
   "author": "EXEM Design Team",
@@ -29,12 +29,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/exem/design-system",
+    "url": "https://github.com/EXEM-FE/design-system",
     "directory": "packages/react"
   },
-  "homepage": "https://design.exem.io",
+  "homepage": "https://github.com/EXEM-FE/design-system",
   "bugs": {
-    "url": "https://github.com/exem/design-system/issues"
+    "url": "https://github.com/EXEM-FE/design-system/issues"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
@@ -43,7 +43,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "exem-design-token": "^0.2.1"
+    "@exem-fe/design-token": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.6",

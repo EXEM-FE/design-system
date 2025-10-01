@@ -1,4 +1,4 @@
-import { tokens } from "exem-design-token"
+import { tokens } from "@exem-fe/design-token"
 import plugin from "tailwindcss/plugin"
 
 /**
@@ -19,7 +19,7 @@ export default plugin(
   ({ addUtilities, matchUtilities }) => {
     // CSS 변수 로딩을 위한 기본 스타일
     addUtilities({
-      "@import": '"exem-stylesheet"',
+      "@import": '"@exem-fe/stylesheet"',
     })
 
     // 그라데이션 정의

@@ -1,5 +1,5 @@
 {
-	"name": "exem-stylesheet",
+	"name": "@exem-fe/stylesheet",
 	"version": "0.2.0",
 	"description": "EXEM Design System - CSS Utilities and Base Styles",
 	"author": "EXEM Design Team",
@@ -34,12 +34,12 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/exem/design-system",
+		"url": "https://github.com/EXEM-FE/design-system",
 		"directory": "packages/stylesheet"
 	},
-	"homepage": "https://design.exem.io",
+	"homepage": "https://github.com/EXEM-FE/design-system",
 	"bugs": {
-		"url": "https://github.com/exem/design-system/issues"
+		"url": "https://github.com/EXEM-FE/design-system/issues"
 	},
 	"publishConfig": {
 		"access": "public"

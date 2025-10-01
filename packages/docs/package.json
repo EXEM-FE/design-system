@@ -1,5 +1,5 @@
 {
-  "name": "exem-docs",
+  "name": "@exem-fe/docs",
   "type": "module",
   "version": "0.0.1",
   "description": "EXEM Design System Documentation Site",
@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "astro": "^5.12.8",
-    "exem-design-token": "^0.2.1",
-    "exem-stylesheet": "^0.2.0",
-    "exem-tailwindcss-plugin": "^0.1.2"
+    "@exem-fe/design-token": "workspace:*",
+    "@exem-fe/stylesheet": "workspace:*",
+    "@exem-fe/tailwindcss-plugin": "workspace:*"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",
