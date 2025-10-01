@@ -3,7 +3,7 @@
 	"changelog": "@changesets/cli/changelog",
 	"commit": false,
 	"fixed": [],
-	"linked": [["exem-stylesheet", "exem-design-token"]],
+	"linked": [["@exem-fe/stylesheet", "@exem-fe/design-token"]],
 	"access": "public",
 	"baseBranch": "main",
 	"updateInternalDependencies": "patch",
