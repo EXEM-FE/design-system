@@ -1,5 +1,11 @@
 # @exem/stylesheet
 
+## 1.0.2
+
+### Patch Changes
+
+- 66bb6fc: update README.md
+
 ## 1.0.0
 
 ### Major Changes

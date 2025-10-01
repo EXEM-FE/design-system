@@ -1,6 +1,6 @@
 {
 	"name": "@exem-fe/stylesheet",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "EXEM Design System - CSS Utilities and Base Styles",
 	"author": "EXEM Design Team",
 	"license": "Apache-2.0",

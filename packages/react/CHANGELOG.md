@@ -1,5 +1,13 @@
 # @exem/react
 
+## 1.0.2
+
+### Patch Changes
+
+- 66bb6fc: update README.md
+- Updated dependencies [66bb6fc]
+  - @exem-fe/design-token@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes
