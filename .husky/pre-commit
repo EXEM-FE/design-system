@@ -1,5 +1,6 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+# Load NVM and set PATH for pnpm (VSCode Source Control compatibility)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # 🔄 토큰 자동 생성 (stylesheet 변경 시)
 if git diff --cached --name-only | grep -q "packages/stylesheet/src/global.css"; then

@@ -1,0 +1,15 @@
+# Build outputs
+**/dist/**
+**/build/**
+
+# Dependencies
+**/node_modules/**
+
+# Generated files
+**/.astro/**
+**/.changeset/**
+
+# Git and tooling
+**/.husky/**
+**/.git/**
+
