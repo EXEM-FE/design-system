@@ -1,7 +1,7 @@
 {
   "name": "@exem-fe/docs",
+  "private": true,
   "type": "module",
-  "version": "0.0.2",
   "description": "EXEM Design System Documentation Site",
   "scripts": {
     "dev": "astro dev",
