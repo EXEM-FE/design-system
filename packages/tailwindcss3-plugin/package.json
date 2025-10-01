@@ -44,8 +44,8 @@
     "access": "public"
   },
   "dependencies": {
-    "exem-stylesheet": "workspace:*",
-    "exem-design-token": "workspace:*"
+    "exem-stylesheet": "^0.2.0",
+    "exem-design-token": "^0.2.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",

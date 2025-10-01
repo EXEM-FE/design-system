@@ -17,12 +17,10 @@
 		"dev": "concurrently \"pnpm -r --parallel dev\" \"pnpm watch:tokens\"",
 		"dev:packages": "pnpm -r --parallel dev",
 		"watch:tokens": "node scripts/watch-tokens.js",
-		"deps:update": "node scripts/update-dependencies.js update",
-		"deps:revert": "node scripts/update-dependencies.js revert",
 		"clean": "rm -rf packages/*/dist packages/*/node_modules",
 		"changeset": "changeset",
-		"version": "changeset version && pnpm deps:revert",
-		"release": "pnpm deps:update && pnpm build && changeset publish && pnpm deps:revert",
+		"version": "changeset version",
+		"release": "pnpm build && changeset publish",
 		"prepare": "husky"
 	},
 	"devDependencies": {

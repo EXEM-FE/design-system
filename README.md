@@ -364,18 +364,11 @@ git push
 # x. 프로덕션 빌드
 pnpm build
 
-# y. 의존성 버전 업데이트 (배포 전)
-pnpm deps:update
-# workspace:* → 실제 버전으로 변경
-
-# z. NPM 배포
+# y. NPM 배포
 pnpm release
 # - 전체 패키지 빌드
-# - NPM 레지스트리에 배포
-
-# z+1. 의존성 복구 (배포 후)
-pnpm deps:revert
-# 실제 버전 → workspace:*로 복구
+# - NPM 레지스트리에 자동 배포
+# - Changesets가 의존성 자동 관리
 ```
 
 ### I. 문제 해결
@@ -408,14 +401,10 @@ pnpm format        # Biome 코드 포맷팅
 pnpm typecheck     # TypeScript 타입 체크
 pnpm test          # Vitest 테스트 실행
 
-# 버전 관리
+# 버전 관리 (Changesets)
 pnpm changeset     # 변경사항 기록 (대화형)
 pnpm version       # 버전 업데이트 및 CHANGELOG 자동 생성
-pnpm release       # 빌드 후 npm 배포
-
-# 의존성 관리
-pnpm deps:update   # workspace:*를 실제 버전으로 변경 (배포용)
-pnpm deps:revert   # 실제 버전을 workspace:*로 복구 (개발용)
+pnpm release       # 빌드 후 NPM 자동 배포
 ```
 
 ## 🛠️ 개발 환경 구성

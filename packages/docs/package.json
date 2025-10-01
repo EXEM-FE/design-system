@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "astro": "^5.12.8",
-    "exem-design-token": "workspace:*",
-    "exem-stylesheet": "workspace:*",
-    "exem-tailwindcss-plugin": "workspace:*"
+    "exem-design-token": "^0.2.1",
+    "exem-stylesheet": "^0.2.0",
+    "exem-tailwindcss-plugin": "^0.1.2"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",
