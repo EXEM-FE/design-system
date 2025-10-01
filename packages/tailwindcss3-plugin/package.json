@@ -1,6 +1,6 @@
 {
   "name": "@exem-fe/tailwindcss-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "EXEM Design System - Tailwind CSS 3 Plugin",
   "author": "EXEM Design Team",
   "license": "Apache-2.0",

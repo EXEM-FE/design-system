@@ -1,5 +1,11 @@
 # @exem/design-token
 
+## 1.0.1
+
+### Patch Changes
+
+- 1509bfe: Update README
+
 ## 1.0.0
 
 ### Major Changes
