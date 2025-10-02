@@ -52,7 +52,7 @@
         "useValidAriaValues": "error"
       },
       "nursery": {
-        "useSortedClasses": "warn"
+        "useSortedClasses": "off"
       }
     }
   },
@@ -93,7 +93,8 @@
       "msw/**/*.{js,ts,jsx,tsx}",
       "**/.astro/**",
       "**/.changeset/**",
-      "**/.husky/**"
+      "**/.husky/**",
+      "**/.git/**"
     ],
     "ignoreUnknown": true
   },
@@ -101,6 +102,9 @@
     {
       "includes": ["**/dist/**", "**/build/**", "**/.astro/**"],
       "linter": {
+        "enabled": false
+      },
+      "formatter": {
         "enabled": false
       }
     },
