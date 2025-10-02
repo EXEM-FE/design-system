@@ -1,17 +1,17 @@
-import type { Preview } from "@storybook/react"
-import "./tailwind.css"
+import type { Preview } from '@storybook/react';
+import './tailwind.css';
 
-if (typeof document !== "undefined") {
+if (typeof document !== 'undefined') {
   const ensureStorybookScroll = () => {
-    document.body.classList.add("storybook-scrollable")
-  }
+    document.body.classList.add('storybook-scrollable');
+  };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", ensureStorybookScroll, {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureStorybookScroll, {
       once: true,
-    })
+    });
   } else {
-    ensureStorybookScroll()
+    ensureStorybookScroll();
   }
 }
 
@@ -25,10 +25,10 @@ const preview: Preview = {
     },
     docs: {
       canvas: {
-        sourceState: "shown",
+        sourceState: 'shown',
       },
     },
   },
-}
+};
 
-export default preview
+export default preview;

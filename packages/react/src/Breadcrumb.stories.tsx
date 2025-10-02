@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,20 +6,20 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "./Breadcrumb"
+} from './Breadcrumb';
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: "Design System/Components/Breadcrumb",
+  title: 'Design System/Components/Breadcrumb',
   component: Breadcrumb,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-}
+  tags: ['autodocs'],
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Breadcrumb>
+type Story = StoryObj<typeof Breadcrumb>;
 
 export const Common: Story = {
   render: () => (
@@ -35,4 +35,4 @@ export const Common: Story = {
       </BreadcrumbList>
     </Breadcrumb>
   ),
-}
+};
