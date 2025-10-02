@@ -5,7 +5,7 @@ export NVM_DIR="$HOME/.nvm"
 # 🔄 토큰 자동 생성 (stylesheet 변경 시)
 if git diff --cached --name-only | grep -q "packages/stylesheet/src/global.css"; then
   echo "🔄 CSS 변경 감지 - 토큰 자동 생성 중..."
-  pnpm --filter exem-design-token generate
+  pnpm --filter @exem-fe/design-token generate
   git add packages/design-token/src/tokens/*.ts
   echo "✅ 토큰 생성 완료 및 스테이징 추가됨"
 fi
