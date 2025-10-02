@@ -1,41 +1,17 @@
 {
+	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
-		"target": "ES2020",
-		"lib": ["ES2020", "DOM", "DOM.Iterable"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"noUncheckedIndexedAccess": true,
-		"exactOptionalPropertyTypes": true,
-		"noImplicitAny": true,
-		"module": "ESNext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
-		"jsx": "react-jsx",
-		"declaration": true,
-		"declarationMap": true,
-		"sourceMap": true,
 		"baseUrl": ".",
-	"paths": {
-		"@exem-fe/design-token": ["./packages/design-token/src"],
-		"@exem-fe/design-token/*": ["./packages/design-token/src/*"],
-		"@exem-fe/icon": ["./packages/icon/src"],
-		"@exem-fe/icon/*": ["./packages/icon/src/*"],
-		"@exem-fe/react": ["./packages/react/src"],
-		"@exem-fe/react/*": ["./packages/react/src/*"],
-		"@exem-fe/docs": ["./packages/docs/src"],
-		"@exem-fe/docs/*": ["./packages/docs/src/*"]
-	}
+		"paths": {
+			"@exem-fe/design-token": ["./packages/design-token/src"],
+			"@exem-fe/design-token/*": ["./packages/design-token/src/*"],
+			"@exem-fe/icon": ["./packages/icon/src"],
+			"@exem-fe/icon/*": ["./packages/icon/src/*"],
+			"@exem-fe/react": ["./packages/react/src"],
+			"@exem-fe/react/*": ["./packages/react/src/*"],
+			"@exem-fe/docs": ["./packages/docs/src"],
+			"@exem-fe/docs/*": ["./packages/docs/src/*"]
+		}
 	},
-	"include": ["packages/*/src/**/*"],
-	"exclude": ["node_modules", "dist", "build", ".changeset", ".husky"]
+	"include": ["packages/*/src/**/*"]
 }

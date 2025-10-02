@@ -3,11 +3,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@exem/design-token": ["../../design-token/src"],
-      "@exem/design-token/*": ["../../design-token/src/*"],
-      "exem-design-token": ["../../design-token/src"],
-      "exem-stylesheet": ["../../stylesheet/src"],
-      "exem-tailwindcss-plugin": ["../../tailwindcss3-plugin/src"]
+      "@exem-fe/design-token": ["../../design-token/src"],
+      "@exem-fe/design-token/*": ["../../design-token/src/*"],
+      "@exem-fe/stylesheet": ["../../stylesheet/src"],
+      "@exem-fe/stylesheet/*": ["../../stylesheet/src/*"],
+      "@exem-fe/tailwindcss-plugin": ["../../tailwindcss3-plugin/src"],
+      "@exem-fe/tailwindcss-plugin/*": ["../../tailwindcss3-plugin/src/*"]
     }
   },
   "include": [".astro/types.d.ts", "**/*"],
