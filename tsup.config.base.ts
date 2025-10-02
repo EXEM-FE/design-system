@@ -4,7 +4,7 @@ import { defineConfig, type Options } from 'tsup';
  * Base tsup configuration for all packages
  * Individual packages can extend and override this configuration
  */
-export const createTsupConfig = (options: Options = {}): Options => {
+export const createTsupConfig = (options: Options = {}) => {
   return defineConfig({
     entry: ['src/index.ts'],
     format: ['cjs', 'esm'],
