@@ -1,5 +1,15 @@
 # @exem/design-token
 
+## 1.1.0
+
+### Minor Changes
+
+- 6362f67: TokenKeys 타입 export로 타입 추론 개선
+
+### Patch Changes
+
+- 204ed97: 패키지 exports 및 의존성 구조 개선
+
 ## 1.0.2
 
 ### Patch Changes
