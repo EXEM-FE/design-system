@@ -307,6 +307,11 @@
 	--color-tint-foreground-cyan: var(--color-cyan-06);
 	--color-tint-foreground-violet: var(--color-violet-06);
 	--color-tint-foreground-pink: var(--color-pink-06);
+	
+	/* ci test */
+	--color-ci-test: #1e26be;
+	--color-ci-test-2: #711616;
+
 
 	/* Radius */
 	--radius-weak: 4px;
