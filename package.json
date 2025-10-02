@@ -18,6 +18,8 @@
 		"dev:packages": "pnpm -r --parallel dev",
 		"watch:tokens": "node scripts/watch-tokens.js",
 		"clean": "rm -rf packages/*/dist packages/*/node_modules",
+		"storybook": "pnpm --filter @exem-fe/react storybook",
+		"build-storybook": "pnpm --filter @exem-fe/react build-storybook",
 		"changeset": "changeset",
 		"version": "changeset version",
 		"release": "pnpm build && changeset publish",
