@@ -33,6 +33,7 @@ export default {
         'build',
         'root',
         'all',
+        'release',
       ],
     ],
     'scope-empty': [2, 'never'],
