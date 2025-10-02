@@ -12,3 +12,4 @@ const radiusTokens = {
 } as const
 
 export default radiusTokens
+export type radiusTokenKeys = keyof typeof radiusTokens

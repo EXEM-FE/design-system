@@ -323,3 +323,4 @@ const colorTokens = {
 } as const
 
 export default colorTokens
+export type colorTokenKeys = keyof typeof colorTokens

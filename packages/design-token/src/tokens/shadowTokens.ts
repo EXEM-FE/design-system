@@ -12,3 +12,4 @@ const shadowTokens = {
 } as const
 
 export default shadowTokens
+export type shadowTokenKeys = keyof typeof shadowTokens

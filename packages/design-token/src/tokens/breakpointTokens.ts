@@ -11,3 +11,4 @@ const breakpointTokens = {
 } as const
 
 export default breakpointTokens
+export type breakpointTokenKeys = keyof typeof breakpointTokens

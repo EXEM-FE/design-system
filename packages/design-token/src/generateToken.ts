@@ -169,6 +169,7 @@ function processGlobalCssFile() {
 const ${tokenName} = ${JSON.stringify(tokens, null, 2)} as const;
 
 export default ${tokenName};
+export type ${toCamelCase(prefix)}TokenKeys = keyof typeof ${tokenName};
 `
 
     // TypeScript 파일 쓰기
