@@ -1,5 +1,11 @@
 # @exem/design-token
 
+## 1.1.3
+
+### Patch Changes
+
+- 10e5a1a: ci test
+
 ## 1.1.2
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @exem/react
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [10e5a1a]
+  - @exem-fe/design-token@1.1.3
+
 ## 1.0.5
 
 ### Patch Changes
