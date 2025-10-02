@@ -41,7 +41,8 @@
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,mjs,cjs}": [
 			"biome check --write --no-errors-on-unmatched"
-		]
+		],
+		"*.css": []
 	},
 	"engines": {
 		"node": ">=18"
