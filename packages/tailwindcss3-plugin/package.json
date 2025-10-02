@@ -44,12 +44,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@exem-fe/stylesheet": "workspace:*",
-    "@exem-fe/design-token": "workspace:*"
+    "@exem-fe/design-token": "workspace:*",
+    "@exem-fe/stylesheet": "workspace:*"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.0",
-    "tsup": "^8.0.1",
+    "tailwindcss": "^3.4.18",
+    "tsup": "^8.5.0",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
