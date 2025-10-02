@@ -10,21 +10,9 @@ if git diff --cached --name-only | grep -q "packages/stylesheet/src/global.css";
   echo "✅ 토큰 생성 완료 및 스테이징 추가됨"
 fi
 
-# 스테이징된 파일 목록 저장
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
-
-# 포맷팅 먼저 실행
-echo "🎨 Formatting code..."
-pnpm format
-
-# 원래 스테이징된 파일들만 다시 스테이징
-if [ -n "$STAGED_FILES" ]; then
-  echo "$STAGED_FILES" | xargs git add
-fi
-
-# 린팅 실행 (Biome이 자동으로 dist 폴더 무시)
-echo "🔍 Linting code..."
-pnpm lint:fix || {
+# 🎨 lint-staged로 스테이징된 파일만 포맷팅 및 린팅
+echo "🎨 Formatting and linting staged files..."
+npx lint-staged || {
     echo "⚠️  Some lint issues remain (auto-generated files ignored)"
     exit 0
 }

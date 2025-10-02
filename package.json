@@ -32,10 +32,15 @@
 		"chokidar": "^4.0.3",
 		"concurrently": "^9.2.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.1.2",
+		"lint-staged": "^16.2.3",
 		"nodemon": "^3.1.10",
 		"typescript": "^5.3.3",
 		"vitest": "^3.2.4"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,mjs,cjs}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
 	},
 	"engines": {
 		"node": ">=18"
