@@ -1,12 +1,7 @@
-import { defineConfig } from 'tsup';
+import { createTsupConfig } from '../../tsup.config.base';
 
-export default defineConfig({
-  entry: ['src/index.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  clean: true,
+export default createTsupConfig({
   external: ['tailwindcss'],
   treeshake: true,
   minify: false,
-  sourcemap: true,
 });

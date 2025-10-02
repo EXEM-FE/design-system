@@ -1,10 +1,3 @@
-import { defineConfig } from 'tsup';
+import { createTsupConfig } from '../../tsup.config.base';
 
-export default defineConfig({
-  entry: ['src/index.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  clean: true,
-  sourcemap: true,
-  target: 'es2020',
-});
+export default createTsupConfig();
