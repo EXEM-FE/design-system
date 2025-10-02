@@ -3,19 +3,39 @@
 [![npm version](https://img.shields.io/npm/v/@exem-fe/design-token)](https://www.npmjs.com/package/@exem-fe/design-token)
 [![npm downloads](https://img.shields.io/npm/dm/@exem-fe/design-token)](https://www.npmjs.com/package/@exem-fe/design-token)
 
-EXEM 디자인 시스템의 디자인 토큰을 TypeScript에서 활용할 수 있는 패키지입니다.
+EXEM 디자인 시스템의 디자인 토큰 - TypeScript에서 type-safe하게 사용 가능한 디자인 토큰
 
 ## 개요
 
-CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-JS 라이브러리나 TypeScript 프로젝트에서 type-safe하게 디자인 토큰을 사용할 수 있습니다.
+CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-JS 라이브러리나 TypeScript 프로젝트에서 타입 안전성을 보장합니다.
+
+### 토큰 생성 흐름
+
+```mermaid
+graph LR
+    A[global.css] --> B[generateToken.ts]
+    B --> C[colorTokens.ts]
+    B --> D[radiusTokens.ts]
+    B --> E[shadowTokens.ts]
+    B --> F[breakpointTokens.ts]
+    C --> G[TypeScript App]
+    D --> G
+    E --> G
+    F --> G
+    
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style G fill:#e8f5e9
+```
 
 ## 주요 기능
 
-- **자동 토큰 생성**: CSS 변수에서 TypeScript 토큰 자동 추출
-- **Type-Safe**: TypeScript로 컴파일 타임에 오타 방지  
-- **CSS 변수 래핑**: `var(--token-name)` 형태로 CSS 변수 활용
-- **카테고리별 분류**: color, radius, shadow, breakpoint별 토큰 파일
-- **독립적 사용**: CSS 스타일시트 없이도 토큰만 사용 가능
+| 기능 | 설명 |
+|------|------|
+| **자동 생성** | CSS 변수에서 TypeScript 토큰 자동 추출 |
+| **타입 안전성** | 컴파일 타임 오타 방지 |
+| **CSS 변수** | `var(--token-name)` 형태로 활용 |
+| **카테고리 분류** | color, radius, shadow, breakpoint |
 
 ## 설치
 
@@ -32,152 +52,60 @@ yarn add @exem-fe/design-token
 ### 기본 사용
 
 ```typescript
-// 방법 1: 개별 토큰 직접 import (권장)
-import { color, radius, shadow, breakpoint } from '@exem-fe/design-token'
+import { tokens } from '@exem-fe/design-token';
 
-// CSS-in-JS에서 사용
-const Button = styled.button`
-  background-color: ${color['surface-accent-default']};
-  color: ${color['text-inverse']};
-  border-radius: ${radius.medium};
-  box-shadow: ${shadow.weak};
-`
+// CSS 변수 문자열 반환
+const primaryColor = tokens.color['text-primary'];
+// → "var(--color-text-primary)"
 
-// 방법 2: tokens 객체를 통한 import
-import { tokens } from '@exem-fe/design-token'
+const borderRadius = tokens.radius.medium;
+// → "var(--radius-medium)"
+```
 
-const buttonStyle = {
-  backgroundColor: tokens.color['surface-accent-default'], // var(--color-surface-accent-default)
-  borderRadius: tokens.radius.medium, // var(--radius-medium)
-  boxShadow: tokens.shadow.weak, // var(--shadow-weak)
+### 타입 안전성
+
+```typescript
+import type { colorTokenKeys } from '@exem-fe/design-token';
+
+// 자동완성 지원
+function applyColor(key: colorTokenKeys) {
+  return tokens.color[key];
 }
+
+applyColor('text-primary'); // ✅ 정상
+applyColor('invalid-key');  // ❌ 타입 오류
 ```
 
-### CSS 스타일시트 로드
-
-CSS 변수를 실제로 사용하려면 스타일시트를 함께 import하세요:
+### CSS 변수 직접 사용
 
 ```typescript
-// 앱 최상단에서 CSS 로드 (App.tsx, main.tsx 등)
-import '@exem-fe/design-token/css'
-import { tokens } from '@exem-fe/design-token'
+import '@exem-fe/design-token/css';
 
-// 이제 var(--color-*) 변수들이 활성화됩니다
+// CSS 변수가 전역으로 로드됨
+// → --color-text-primary
+// → --radius-medium
+// → --shadow-weak
 ```
 
-## 토큰 구조
+## 토큰 카테고리
 
-### 자동 생성된 토큰 파일들
+| 카테고리 | 토큰 수 | 용도 |
+|----------|---------|------|
+| **color** | 300+ | 색상, 텍스트, 배경, 테두리 |
+| **radius** | 4 | 테두리 반경 (weak, medium, strong, circle) |
+| **shadow** | 4 | 그림자 (preview, weak, medium, strong) |
+| **breakpoint** | 3 | 반응형 (md, lg, xl) |
 
-```
-src/tokens/
-├── colorTokens.ts       # 색상 토큰 (약 100+ 토큰)
-├── radiusTokens.ts      # 반경 토큰 (4개)
-├── shadowTokens.ts      # 그림자 토큰 (4개)
-└── breakpointTokens.ts  # 브레이크포인트 토큰 (3개)
-```
+## 빌드 스크립트
 
-### colorTokens 예시
-```typescript
-const colorTokens = {
-  "mono-white": "var(--color-mono-white)",
-  "mono-black": "var(--color-mono-black)",
-  "gray-00": "var(--color-gray-00)",
-  // ... 모든 색상 변수
-  "text-primary": "var(--color-text-primary)",
-  "surface-accent-default": "var(--color-surface-accent-default)",
-} as const
-```
-
-### radiusTokens 예시
-```typescript
-const radiusTokens = {
-  "weak": "var(--radius-weak)",      // 4px
-  "medium": "var(--radius-medium)",  // 6px
-  "strong": "var(--radius-strong)",  // 8px
-  "circle": "var(--radius-circle)",  // 999px
-} as const
-```
-
-## 토큰 재생성
-
-CSS 변수가 변경되었을 때 토큰을 다시 생성할 수 있습니다:
+토큰 자동 생성:
 
 ```bash
-# 토큰 재생성
 pnpm generate
 ```
 
-이 명령어는:
-1. `exem-stylesheet/src/global.css`에서 CSS 변수 추출
-2. 접두사별로 토큰 분류 (color, radius, shadow, breakpoint)
-3. TypeScript 파일로 자동 생성
-4. Biome으로 코드 포맷팅
-
-## 개발
-
-```bash
-# 개발 모드 실행
-pnpm dev
-
-# 빌드
-pnpm build
-
-# 타입 체크
-pnpm typecheck
-
-# 토큰 재생성
-pnpm generate
-```
-
-## 의존성
-
-### DevDependencies
-- `tsx` - TypeScript 실행 환경
-- `tsup` - 빌드 도구
-- `typescript` - 타입스크립트 컴파일러
-
-## 파일 구조
-
-```
-design-token/
-├── src/
-│   ├── tokens/              # 자동 생성된 토큰 파일들
-│   │   ├── colorTokens.ts
-│   │   ├── radiusTokens.ts
-│   │   ├── shadowTokens.ts
-│   │   └── breakpointTokens.ts
-│   ├── generateToken.ts     # 토큰 생성 스크립트
-│   ├── index.ts            # 메인 엔트리 (CSS 로드)
-│   └── tsconfig.json       # TypeScript 설정
-├── dist/                   # 빌드 결과물
-└── package.json
-```
-
-## 관련 패키지
-
-- [`@exem-fe/stylesheet`](https://www.npmjs.com/package/@exem-fe/stylesheet) - CSS 변수 정의 소스
-- [`@exem-fe/tailwindcss-plugin`](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin) - Tailwind CSS 플러그인에서 토큰 활용
-- [`@exem-fe/react`](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트 라이브러리
-
-## 개발 (모노레포 기여자용)
-
-```bash
-# 토큰 재생성
-pnpm generate
-
-# 빌드
-pnpm build
-
-# 타입 체크
-pnpm typecheck
-```
+CSS 변수 변경 시 자동으로 TypeScript 토큰이 재생성됩니다.
 
 ## 라이선스
 
-Apache License 2.0
-
-## 링크
-
-- [GitHub Repository](https://github.com/EXEM-FE/design-system)
-- [NPM Package](https://www.npmjs.com/package/@exem-fe/design-token)
+Apache-2.0
