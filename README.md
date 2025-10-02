@@ -32,10 +32,10 @@ EXEM 제품군을 위한 통합 디자인 시스템
 
 ### 배포 완료 (NPM)
 
-- **@exem-fe/design-token**: 색상, 크기, 간격 등 디자인 규칙
-- **@exem-fe/stylesheet**: 전역 CSS 스타일 및 변수
-- **@exem-fe/react**: UI 컴포넌트
-- **@exem-fe/tailwindcss-plugin**: Tailwind CSS 통합
+- **@exem-fe/design-token** [![npm downloads](https://img.shields.io/npm/dm/@exem-fe/design-token)](https://www.npmjs.com/package/@exem-fe/design-token): 색상, 크기, 간격 등 디자인 규칙
+- **@exem-fe/stylesheet** [![npm downloads](https://img.shields.io/npm/dm/@exem-fe/stylesheet)](https://www.npmjs.com/package/@exem-fe/stylesheet): 전역 CSS 스타일 및 변수
+- **@exem-fe/react** [![npm downloads](https://img.shields.io/npm/dm/@exem-fe/react)](https://www.npmjs.com/package/@exem-fe/react): UI 컴포넌트
+- **@exem-fe/tailwindcss-plugin** [![npm downloads](https://img.shields.io/npm/dm/@exem-fe/tailwindcss-plugin)](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin): Tailwind CSS 통합
 
 ### 개발 예정
 

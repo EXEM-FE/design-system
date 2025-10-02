@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/EXEM-FE/design-system/main/assets/exem-design-system-banner.webp" alt="EXEM Design System" width="100%" />
+</p>
+
 # @exem-fe/design-token
 
 [![npm version](https://img.shields.io/npm/v/@exem-fe/design-token)](https://www.npmjs.com/package/@exem-fe/design-token)
@@ -11,21 +15,17 @@ CSS 변수를 기반으로 TypeScript 토큰을 자동 생성합니다. CSS-in-J
 
 ### 토큰 생성 흐름
 
-```mermaid
-graph LR
-    A[global.css] --> B[generateToken.ts]
-    B --> C[colorTokens.ts]
-    B --> D[radiusTokens.ts]
-    B --> E[shadowTokens.ts]
-    B --> F[breakpointTokens.ts]
-    C --> G[TypeScript App]
-    D --> G
-    E --> G
-    F --> G
-    
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style G fill:#e8f5e9
+```
+global.css
+     ↓
+generateToken.ts
+     ↓
+ ┌───┴────┬───────────┬───────────┐
+ ↓        ↓           ↓           ↓
+colorTokens  radiusTokens  shadowTokens  breakpointTokens
+ └────┬───┴───────────┴───────────┘
+      ↓
+TypeScript App
 ```
 
 ## 주요 기능
@@ -106,6 +106,27 @@ pnpm generate
 
 CSS 변수 변경 시 자동으로 TypeScript 토큰이 재생성됩니다.
 
+## 요구사항
+
+- Node.js >= 18
+- TypeScript >= 5.0 (권장)
+
+## 관련 패키지
+
+- [@exem-fe/stylesheet](https://www.npmjs.com/package/@exem-fe/stylesheet) - CSS 변수
+- [@exem-fe/react](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트
+- [@exem-fe/tailwindcss-plugin](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin) - Tailwind 플러그인
+
+## 문의
+
+- GitHub: https://github.com/EXEM-FE/design-system
+- Issues: https://github.com/EXEM-FE/design-system/issues
+- NPM: [@exem-fe](https://www.npmjs.com/org/exem-fe)
+
 ## 라이선스
 
 Apache-2.0
+
+---
+
+Copyright 2025 EXEM Corporation

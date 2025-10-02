@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/EXEM-FE/design-system/main/assets/exem-design-system-banner.webp" alt="EXEM Design System" width="100%" />
+</p>
+
 # @exem-fe/stylesheet
 
 [![npm version](https://img.shields.io/npm/v/@exem-fe/stylesheet)](https://www.npmjs.com/package/@exem-fe/stylesheet)
@@ -11,28 +15,16 @@ EXEM 디자인 시스템의 CSS 변수와 전역 스타일
 
 ### CSS 변수 계층 구조
 
-```mermaid
-graph TD
-    A[global.css] --> B[Primitive Colors]
-    A --> C[Semantic Tokens]
-    A --> D[Size Tokens]
-    
-    B --> B1[gray-00 ~ gray-10]
-    B --> B2[red-00 ~ red-10]
-    B --> B3[blue-00 ~ blue-10]
-    
-    C --> C1[text-primary]
-    C --> C2[border-accent]
-    C --> C3[surface-default]
-    
-    D --> D1[radius-medium]
-    D --> D2[shadow-weak]
-    D --> D3[breakpoint-lg]
-    
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style C fill:#f3e5f5
-    style D fill:#e8f5e9
+```
+                 global.css
+                     ↓
+     ┌───────────────┼───────────────┐
+     ↓               ↓               ↓
+Primitive Colors  Semantic Tokens  Size Tokens
+     ↓               ↓               ↓
+ ┌───┼───┐      ┌───┼───┐      ┌───┼───┐
+gray red blue   text border   radius shadow
+ 00~10 00~10    primary accent medium weak
 ```
 
 ## 주요 기능
@@ -107,6 +99,26 @@ pnpm add -D @exem-fe/tailwindcss-plugin
 # or npm install -D / yarn add -D
 ```
 
+## 요구사항
+
+- Node.js >= 18
+
+## 관련 패키지
+
+- [@exem-fe/design-token](https://www.npmjs.com/package/@exem-fe/design-token) - 디자인 토큰
+- [@exem-fe/react](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트
+- [@exem-fe/tailwindcss-plugin](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin) - Tailwind 플러그인
+
+## 문의
+
+- GitHub: https://github.com/EXEM-FE/design-system
+- Issues: https://github.com/EXEM-FE/design-system/issues
+- NPM: [@exem-fe](https://www.npmjs.com/org/exem-fe)
+
 ## 라이선스
 
 Apache-2.0
+
+---
+
+Copyright 2025 EXEM Corporation

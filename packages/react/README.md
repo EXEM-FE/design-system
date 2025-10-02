@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/EXEM-FE/design-system/main/assets/exem-design-system-banner.webp" alt="EXEM Design System" width="100%" />
+</p>
+
 # @exem-fe/react
 
 [![npm version](https://img.shields.io/npm/v/@exem-fe/react)](https://www.npmjs.com/package/@exem-fe/react)
@@ -17,18 +21,13 @@ yarn add @exem-fe/react @exem-fe/design-token
 
 ## 아키텍처
 
-```mermaid
-graph LR
-    A[@exem-fe/design-token] --> B[React Components]
-    C[@exem-fe/stylesheet] --> B
-    B --> D[Breadcrumb]
-    B --> E[Button 예정]
-    B --> F[더 많은 컴포넌트...]
-    
-    style A fill:#e1f5ff
-    style C fill:#e1f5ff
-    style B fill:#fff4e1
-    style D fill:#e8f5e9
+```
+@exem-fe/design-token
+        ↓
+@exem-fe/stylesheet  →  React Components
+                              ↓
+                        ┌─────┴─────┐
+                   Breadcrumb      ...(예정)
 ```
 
 ## CSS 설정
@@ -91,21 +90,43 @@ const className = cn('text-red-500', 'bg-blue-500', {
 
 ## 개발
 
-### Storybook
+### 로컬에서 빌드
 
 ```bash
 cd packages/react
+pnpm build
+```
+
+### Storybook (로컬 개발용)
+
+프로젝트 루트에서 실행:
+
+```bash
 pnpm storybook
 ```
 
-http://localhost:6006 에서 확인 가능
+## 요구사항
 
-### 빌드
+- Node.js >= 18
+- React >= 19.0.0
+- React DOM >= 19.0.0
 
-```bash
-pnpm build
-```
+## 관련 패키지
+
+- [@exem-fe/design-token](https://www.npmjs.com/package/@exem-fe/design-token) - 디자인 토큰
+- [@exem-fe/stylesheet](https://www.npmjs.com/package/@exem-fe/stylesheet) - CSS 변수
+- [@exem-fe/tailwindcss-plugin](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin) - Tailwind 플러그인
+
+## 문의
+
+- GitHub: https://github.com/EXEM-FE/design-system
+- Issues: https://github.com/EXEM-FE/design-system/issues
+- NPM: [@exem-fe](https://www.npmjs.com/org/exem-fe)
 
 ## 라이선스
 
 Apache-2.0
+
+---
+
+Copyright 2025 EXEM Corporation

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/EXEM-FE/design-system/main/assets/exem-design-system-banner.webp" alt="EXEM Design System" width="100%" />
+</p>
+
 # @exem-fe/tailwindcss-plugin
 
 [![npm version](https://img.shields.io/npm/v/@exem-fe/tailwindcss-plugin)](https://www.npmjs.com/package/@exem-fe/tailwindcss-plugin)
@@ -11,20 +15,18 @@ EXEM 디자인 시스템을 Tailwind CSS 3에서 사용하기 위한 플러그�
 
 ### 통합 구조
 
-```mermaid
-graph TD
-    A[@exem-fe/stylesheet] --> B[CSS Variables]
-    C[@exem-fe/design-token] --> D[TypeScript Tokens]
-    B --> E[Plugin]
-    D --> E
-    E --> F[Tailwind Config]
-    F --> G[Utility Classes]
-    G --> H[Your App]
-    
-    style A fill:#e1f5ff
-    style C fill:#e1f5ff
-    style E fill:#fff4e1
-    style H fill:#e8f5e9
+```
+@exem-fe/stylesheet  →  CSS Variables
+                             ↓
+@exem-fe/design-token → TypeScript Tokens
+                             ↓
+                          Plugin
+                             ↓
+                      Tailwind Config
+                             ↓
+                      Utility Classes
+                             ↓
+                          Your App
 ```
 
 ## 주요 기능
@@ -122,6 +124,27 @@ function Button() {
 <div class="rounded-exem-medium shadow-exem-weak">Card</div>
 ```
 
+## 요구사항
+
+- Node.js >= 18
+- Tailwind CSS >= 3.0
+
+## 관련 패키지
+
+- [@exem-fe/stylesheet](https://www.npmjs.com/package/@exem-fe/stylesheet) - CSS 변수 (필수)
+- [@exem-fe/design-token](https://www.npmjs.com/package/@exem-fe/design-token) - 디자인 토큰
+- [@exem-fe/react](https://www.npmjs.com/package/@exem-fe/react) - React 컴포넌트
+
+## 문의
+
+- GitHub: https://github.com/EXEM-FE/design-system
+- Issues: https://github.com/EXEM-FE/design-system/issues
+- NPM: [@exem-fe](https://www.npmjs.com/org/exem-fe)
+
 ## 라이선스
 
 Apache-2.0
+
+---
+
+Copyright 2025 EXEM Corporation
