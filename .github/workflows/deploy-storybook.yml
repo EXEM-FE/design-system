@@ -43,6 +43,7 @@ jobs:
         run: pnpm --filter @exem-fe/react build-storybook
         env:
           NODE_OPTIONS: --max_old_space_size=4096
+          BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

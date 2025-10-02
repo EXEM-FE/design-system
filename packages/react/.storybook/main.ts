@@ -10,5 +10,12 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  viteFinal: async (config) => {
+    // GitHub Pages 서브경로 지원
+    if (process.env.BASE_PATH) {
+      config.base = process.env.BASE_PATH;
+    }
+    return config;
+  },
 };
 export default config;
