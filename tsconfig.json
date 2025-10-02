@@ -25,16 +25,16 @@
 		"declarationMap": true,
 		"sourceMap": true,
 		"baseUrl": ".",
-		"paths": {
-			"@exem/design-token": ["./packages/design-token/src"],
-			"@exem/design-token/*": ["./packages/design-token/src/*"],
-			"@exem/icon": ["./packages/icon/src"],
-			"@exem/icon/*": ["./packages/icon/src/*"],
-			"@exem/react": ["./packages/react/src"],
-			"@exem/react/*": ["./packages/react/src/*"],
-			"@exem/docs": ["./packages/docs/src"],
-			"@exem/docs/*": ["./packages/docs/src/*"]
-		}
+	"paths": {
+		"@exem-fe/design-token": ["./packages/design-token/src"],
+		"@exem-fe/design-token/*": ["./packages/design-token/src/*"],
+		"@exem-fe/icon": ["./packages/icon/src"],
+		"@exem-fe/icon/*": ["./packages/icon/src/*"],
+		"@exem-fe/react": ["./packages/react/src"],
+		"@exem-fe/react/*": ["./packages/react/src/*"],
+		"@exem-fe/docs": ["./packages/docs/src"],
+		"@exem-fe/docs/*": ["./packages/docs/src/*"]
+	}
 	},
 	"include": ["packages/*/src/**/*"],
 	"exclude": ["node_modules", "dist", "build", ".changeset", ".husky"]
