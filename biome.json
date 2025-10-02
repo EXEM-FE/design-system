@@ -8,26 +8,51 @@
       "style": {
         "noNonNullAssertion": "off",
         "useBlockStatements": "error",
-        "useConst": "error"
+        "useConst": "error",
+        "useImportType": "error",
+        "useExportType": "error",
+        "noParameterAssign": "off",
+        "useNodejsImportProtocol": "error",
+        "useNumberNamespace": "error"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn",
-        "useHookAtTopLevel": "error"
+        "useHookAtTopLevel": "error",
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error"
       },
       "complexity": {
         "noExcessiveCognitiveComplexity": "warn",
         "noExcessiveNestedTestSuites": "error",
-        "noForEach": "warn"
+        "noForEach": "warn",
+        "useLiteralKeys": "error",
+        "useOptionalChain": "warn"
       },
       "suspicious": {
         "noDuplicateClassMembers": "error",
         "noDuplicateObjectKeys": "error",
         "noDebugger": "warn",
-        "noConsole": "warn"
+        "noConsole": "warn",
+        "noExplicitAny": "error",
+        "noArrayIndexKey": "warn",
+        "noConfusingVoidType": "warn"
       },
       "performance": {
         "noBarrelFile": "off",
-        "noDelete": "warn"
+        "noDelete": "warn",
+        "noAccumulatingSpread": "warn"
+      },
+      "a11y": {
+        "useAltText": "error",
+        "useAnchorContent": "error",
+        "useAriaPropsForRole": "error",
+        "useButtonType": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useValidAriaProps": "error",
+        "useValidAriaValues": "error"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
       }
     }
   },
@@ -36,27 +61,36 @@
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 80,
+    "lineWidth": 100,
     "lineEnding": "lf"
   },
   "javascript": {
     "formatter": {
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
-      "trailingCommas": "es5",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
       "bracketSpacing": true,
       "bracketSameLine": false,
-      "quoteStyle": "double"
+      "quoteStyle": "single"
     }
   },
   "files": {
-    "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+    "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"],
     "experimentalScannerIgnores": [
-      "**/dist/**",
-      "**/build/**",
       "**/node_modules/**",
+      "**/dist/**",
+      "**/.dist/**",
+      "**/build/**",
+      "**/public/**",
+      "**/.docs/**",
+      "**/.playwright-report/**",
+      "**/.storybook/**",
+      "**/*.stories.{js,ts,jsx,tsx}",
+      "**/*.story.{js,ts,jsx,tsx}",
+      "**/stories/**",
+      "msw/**/*.{js,ts,jsx,tsx}",
       "**/.astro/**",
       "**/.changeset/**",
       "**/.husky/**"
@@ -71,12 +105,7 @@
       }
     },
     {
-      "includes": [
-        "**/*.test.ts",
-        "**/*.test.tsx",
-        "**/*.spec.ts",
-        "**/*.spec.tsx"
-      ],
+      "includes": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
       "linter": {
         "rules": {
           "suspicious": {
@@ -96,11 +125,7 @@
       }
     },
     {
-      "includes": [
-        "scripts/**/*.js",
-        "**/generateToken.ts",
-        "**/generateToken.js"
-      ],
+      "includes": ["scripts/**/*.js", "**/generateToken.ts", "**/generateToken.js"],
       "linter": {
         "rules": {
           "suspicious": {
