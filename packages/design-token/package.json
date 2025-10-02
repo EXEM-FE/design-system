@@ -13,7 +13,7 @@
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
-		"./css": "../stylesheet/dist/index.css"
+		"./css": "@exem-fe/stylesheet"
 	},
 	"sideEffects": false,
 	"files": [
@@ -42,9 +42,6 @@
 	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"dependencies": {
-		"@exem-fe/stylesheet": "workspace:*"
 	},
 	"devDependencies": {
 		"tsx": "^4.0.0",
