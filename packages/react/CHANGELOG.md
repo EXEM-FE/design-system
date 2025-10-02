@@ -1,5 +1,13 @@
 # @exem/react
 
+## 1.0.5
+
+### Patch Changes
+
+- b640565: update README.md
+- Updated dependencies [b640565]
+  - @exem-fe/design-token@1.1.2
+
 ## 1.0.4
 
 ### Patch Changes
