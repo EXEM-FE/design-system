@@ -1,5 +1,11 @@
 # @exem/design-token
 
+## 1.1.1
+
+### Patch Changes
+
+- 1368d13: update README.md
+
 ## 1.1.0
 
 ### Minor Changes

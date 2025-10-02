@@ -1,5 +1,14 @@
 # @exem-fe/tailwindcss-plugin
 
+## 1.0.4
+
+### Patch Changes
+
+- 1368d13: update README.md
+- Updated dependencies [1368d13]
+  - @exem-fe/design-token@1.1.1
+  - @exem-fe/stylesheet@1.1.1
+
 ## 1.0.3
 
 ### Patch Changes
